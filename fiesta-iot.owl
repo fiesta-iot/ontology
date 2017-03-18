@@ -5309,7 +5309,13 @@ O&amp;M allows sensors, methods, instruments, systems, algorithms and process ch
         <rdfs:seeAlso>http://purl.oclc.org/NET/ssnx/qu/unit#wattPerSquareMetre</rdfs:seeAlso>
     </owl:Class>
     
+    <!--  http://purl.org/iot/vocab/m3-lite#MicroWattPerSquareCentimeter -->
 
+    <owl:Class rdf:about="&mthreelite;MicroWattPerSquareCentiMeter">
+        <rdfs:subClassOf rdf:resource="&qu;WattPerSquareMeter"/>
+        <rdfs:comment xml:lang="en">It is one of the unit for radiative and other energy fluxes.</rdfs:comment>
+        <rdfs:label xml:lang="en">Microwatt Per Square Centimetre, Microwatt Per Square Centimeter</rdfs:label>
+    </owl:Class>
 
     <!-- http://purl.org/iot/vocab/m3-lite#Weather -->
 
