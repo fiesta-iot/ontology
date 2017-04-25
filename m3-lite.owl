@@ -2,7 +2,6 @@
 
 <!DOCTYPE rdf:RDF [
     <!ENTITY dcterms "http://purl.org/dc/terms/" >
-    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
     <!ENTITY vann "http://purl.org/vocab/vann/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY qu "http://purl.org/NET/ssnx/qu/qu#" >
@@ -33,34 +32,91 @@
      xmlns:qu="http://purl.org/NET/ssnx/qu/qu#"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:iot-lite="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#">
 
     <owl:Ontology rdf:about="http://purl.org/iot/vocab/m3-lite#">
-        <owl:versionInfo rdf:datatype="&xsd;decimal">1.0</owl:versionInfo>
-        <dcterms:issued rdf:datatype="&xsd;date">2015-07-02</dcterms:issued>
-        <rdfs:comment xml:lang="en">The M3-lite taxonomy is a taxonomy that enables testbeds to semantically annotate the IoT data produced by heterogeneous devices and store them in a federated datastore such as FIESTA-IoT. We classify devices, the domain of interests (health, smart home, smart kitchen, environmental monitoring, etc.), phenomenons and unit of measurements.</rdfs:comment>
+        <owl:versionInfo rdf:datatype="&xsd;decimal">1.1</owl:versionInfo>
+        <dc:issued rdf:datatype="&xsd;date">2015-07-02</dc:issued>
+        <rdfs:comment xml:lang="en">The M3-lite taxonomy is a taxonomy that enables testbeds to semantically annotate the IoT data produced by heterogeneous devices and store them in a federated datastore such as FIESTA-IoT. We classify devices, the domain of interests (health, smart home, smart kitchen, environmental monitoring, etc.), phenomena and unit of measurements.</rdfs:comment>
         <vann:preferredNamespacePrefix>m3-lite</vann:preferredNamespacePrefix>
-        <dcterms:modified>2017-02-09</dcterms:modified>
-        <dc:creator xml:lang="en">Amelie Gyrard, NUIG, Galway</dc:creator>
-        <dc:creator xml:lang="en">Luis Sanchez, UC, Santander</dc:creator>
-        <dc:title xml:lang="en">The M3-lite Taxonomy</dc:title>
         <vann:preferredNamespaceUri>http://purl.org/iot/vocab/m3-lite#</vann:preferredNamespaceUri>
-        <dc:creator xml:lang="en">David Gomez, UC, Santander</dc:creator>
-        <vs:term_status>Released</vs:term_status>
+        <dc:title xml:lang="en">The M3-lite Taxonomy</dc:title>
+        <dc:modified>2017-04-20</dc:modified>
         <dc:creator xml:lang="en">Rachit Agarwal, Inria, Paris</dc:creator>
-        <dc:creator xml:lang="en">Jorge Lanza, UC, Santander</dc:creator>
-        <dc:contributor xml:lang="en">Garvita Bajaj, Inria, Paris</dc:contributor>
+        <dc:creator xml:lang="en">David Gomez, UC, Santander</dc:creator>
         <dc:creator xml:lang="en">Tarek Elsaleh, UNIS, Surrey</dc:creator>
-        <dc:description xml:lang="en">M3-lite taxonomy is designed for the FIESTA-IOT H2020 EU project. It is a lite version of M3 ontology. M3-lite contains taxonomy for QuantityKind (commanly known as physical and environmental phenomenon), Unit of measurements, different types of sensor and different types of domain of interests. M3-lite has evolved to serve the purpose of several testbeds that want to be part of federation provided by FIESTA-IoT. Most relevent testbeds integrated using M3-lite are  EU FP7's SmartSantander testbed, UniS's (UK) SmartICS testbed, Inria's (France) Soundcity testbed, KETI's (South Korea) Mobius testbed and Com4Innov's (France) 4G testbed.</dc:description>
+        <dc:creator xml:lang="en">Luis Sanchez, UC, Santander</dc:creator>
+        <dc:creator xml:lang="en">Jorge Lanza, UC, Santander</dc:creator>
+        <dc:creator xml:lang="en">Amelie Gyrard, NUIG, Galway</dc:creator>
+        <dc:contributor xml:lang="en">Garvita Bajaj, Inria, Paris</dc:contributor>
+        <dc:description xml:lang="en">M3-lite taxonomy is designed for the FIESTA-IOT H2020 EU project. It is a lite version of M3 ontology. M3-lite contains taxonomy for QuantityKind (commonly known as physical and environmental phenomenon), Unit of measurements, different types of sensor and different types of domain of interests. M3-lite has evolved to serve the purpose of several testbeds that want to be part of federation provided by FIESTA-IoT. Most relevant testbeds integrated using M3-lite are  EU FP7's SmartSantander testbed, UniS's (UK) SmartICS testbed, Inria's (France) Soundcity testbed, KETI's (South Korea) Mobius testbed and Com4Innov's (France) 4G testbed.
+
+
+We further acknowledge, testbed provider for their valuable comments.
+
+        </dc:description>
+        <dc:rights>Copyright EU H2020 FIESTA-IoT</dc:rights>
     </owl:Ontology>
 
 
 
     <!--
+    Last updated: April 20 2017
+    Rachit Agarwal (INRIA)
+        - Converting all to British English (Meter to Metre and Liter to litre) (changes in UNITS, QKS, etc.)
+        - QuantityKinds Changes
+            - chemicalAgentAtmosphericConcentrationO3, intDlThroughputKbps,intUlPacketLoss,intUlThroughputKbps Now start with uppercase
+            - ElectricCurrent prefix change to m3-lite from QUDT
+            - ChemicalAgentAtmosphericConcentration now a subclass of ChemicalAgentConcentration
+
+        - QuantityKinds Added
+            - Count (Number of available particular things.)
+            - CountAvailableBicycles (Number of available bicycles at a particular bicycle docking station.)
+            - CountAvailableTaxis (Number of taxis available at a particular taxi stop.)
+            - CountEmptyDockingPoints (Number of empty docking points at a particular bicycle docking station.)
+            - TrafficIntensity (The intensity of a traffic flow is the number of vehicles passing a cross section of a road in a unit of time.)
+            - ChemicalAgentWaterConcentration as subclass of ChemicalAgentConcentration
+            - ChemicalAgentWaterConcentrationO2, ChemicalAgentWaterConcentrationNH4Ion, ChemicalAgentWaterConcentrationNO3Ion as subclasses of ChemicalAgentWaterConcentration
+            - ChemicalAgentAtmosphericConcentrationDust
+            - IonisingRadiation
+            - Voltage
+
+        - SensingDevices Changes
+            - VehicleCountSensor is now a subclass of Counter.
+            - SoilHumiditySensor made subclass of HumiditySensor
+            - For PHSensor added domainOfInterest Environment.
+            - VehicleCountSensor subclass of Counter
+            - Thermometer now has subclasses (SoilThermometer, WaterThermometer, BoardThermometer BodyThermometer, RoadSurfaceThermometer, AirThermometer)
+            - changed OccupancyDetector to PresenceDetector
+
+        - SensingDevices Added
+            - ElectricFieldSensor (Scientific instrument for measuring electromagnetic fields (EMF). Most of them measure the electromagnetic radiation flux density (DC fields) or the change in an electromagnetic field over time (AC fields).)
+            - Counter (Sensors that reckons occurrences or repetitions of physical objects, phenomena or events.)  
+            - DoorStateSensor (This sensor detects if a door is in the state of OPEN or CLOSED.)
+            - SoilThermometer (This sensor reports Soil temperature.)
+            - WaterThermometer (This sensor reports Water temperature.)
+            - WaterPHSensor (Device used to detect PH level of water. Sub Class of PhSensor)
+            - WaterConductivitySensor (Device used to measure the conductivity of water. subclass of ConductivitySensor)
+            - Air Humidity Sensor added and made subclass of Humidity sensor
+            - Added WaterO2IonSensor, WaterNH4IonSensor, WaterNO3IonSensor, LoRaInterfaceEnergyMeter, WiFiInterfaceEnergyMeter, clock
+            - HumanPresenceDetector, VehiclePresenceDetector added as subclass of PresenceDetector
+            - Dust sensor, Optical Dust sensor
+            - RadiationParticleDetector
+
+        - Units Changes
+            - Bar and DegreeAngle prefix change to m3-lite from QUDT
+            - MicroWatt changed to  Microwatt
+            - WattPerSquareMeter had incorrect subclassing reference
+
+        - Units Added
+            - Item (Each of the accountable elements within a group)
+            - SiemensPerMetre (Conductivity is measured in Siemens per meter (S/m).)
+            - MilligramPerLitre (Level of Dissolved substance in liquid measured in mg per litre.)
+            - RadiationParticlesPerMinute
+
     Last updated: Febuary 09 2017
     Rachit Agarwal (INRIA)
         - Major release
@@ -205,15 +261,15 @@
 
 
 
-    <!-- http://purl.org/dc/terms/issued -->
+    <!-- http://purl.org/dc/elements/1.1/issued -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/issued"/>
 
 
 
-    <!-- http://purl.org/dc/terms/modified -->
+    <!-- http://purl.org/dc/elements/1.1/modified -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/modified"/>
 
 
 
@@ -240,18 +296,41 @@
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#equivalentClass"/>
 
 
+    <!-- http://purl.org/dc/elements/1.1/creator -->
 
-    <!-- http://www.w3.org/2003/06/sw-vocab-status/ns#term_status -->
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
 
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"/>
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
 
-
-
-    <!-- http://xmlns.com/foaf/0.1/name -->
-
-    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/name"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
 
 
+
+    <!-- http://purl.org/dc/elements/1.1/rights -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights"/>
+
+    <!-- http://www.w3.org/2002/07/owl#versionInfo -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#versionInfo"/>
+
+
+        <!-- http://www.w3.org/2000/01/rdf-schema#isDefinedBy -->
+
+    <owl:AnnotationProperty rdf:about="&rdfs;isDefinedBy"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <owl:AnnotationProperty rdf:about="&rdfs;label"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#seeAlso -->
+
+    <owl:AnnotationProperty rdf:about="&rdfs;seeAlso"/>
 
     <!--
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -340,20 +419,20 @@
 
 
 
-    <!-- http://data.qudt.org/qudt/owl/1.0.0/unit.owl#Bar -->
+    <!-- http://purl.org/iot/vocab/m3-lite#Bar -->
 
-    <owl:Class rdf:about="&qudt;Bar">
+    <owl:Class rdf:about="&mthreelite;Bar">
         <rdfs:subClassOf rdf:resource="&qu;Unit"/>
-        <rdfs:comment xml:lang="en">Metric unit of atmospheric pressure equal to 14.50 pounds per square inch (lb/in2), 1.02 kilograms per square centimeter (kg/cm2), 29.53 inches of mercury (in Hg), or 0.9869 atmosphere.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Metric unit of atmospheric pressure equal to 14.50 pounds per square inch (lb/in2), 1.02 kilograms per square centimetre (kg/cm2), 29.53 inches of mercury (in Hg), or 0.9869 atmosphere.</rdfs:comment>
         <rdfs:label xml:lang="en">Bar</rdfs:label>
         <rdfs:seeAlso>http://qudt.org/vocab/unit#Bar</rdfs:seeAlso>
     </owl:Class>
 
 
 
-    <!-- http://data.qudt.org/qudt/owl/1.0.0/unit.owl#DegreeAngle -->
+    <!-- http://purl.org/iot/vocab/m3-lite#DegreeAngle -->
 
-    <owl:Class rdf:about="&qudt;DegreeAngle">
+    <owl:Class rdf:about="&mthreelite;DegreeAngle">
         <rdfs:subClassOf rdf:resource="&mthreelite;Degree"/>
         <rdfs:comment xml:lang="en">A plane angle unit which is equal to 1/360 of a full rotation or pi/180 rad.</rdfs:comment>
         <rdfs:label xml:lang="en">Degree Angle</rdfs:label>
@@ -362,9 +441,9 @@
 
 
 
-    <!-- http://data.qudt.org/qudt/owl/1.0.0/unit.owl#ElectricCurrent -->
+    <!-- http://purl.org/iot/vocab/m3-lite#ElectricCurrent -->
 
-    <owl:Class rdf:about="&qudt;ElectricCurrent">
+    <owl:Class rdf:about="&mthreelite;ElectricCurrent">
         <rdfs:subClassOf rdf:resource="&qu;QuantityKind"/>
         <rdfs:comment xml:lang="en">Electric current is the flow of electric charge. It is a base quantity in the International System of Units. Electric current is electric charge divided by time. Electric Current is the flow (movement) of electric charge. The amount of electric current through some surface, e.g., a section through a copper conductor, is defined as the amount of electric charge flowing through that surface over time.</rdfs:comment>
         <rdfs:label xml:lang="en">Electric Current</rdfs:label>
@@ -481,8 +560,8 @@
 
     <owl:Class rdf:about="&mthreelite;AccS1SigEstabSuccRate">
         <rdfs:subClassOf rdf:resource="&mthreelite;Communication"/>
-        <rdfs:comment xml:lang="en">S1 (S1 standardized interface between eNB and Evolved Packet Core) signaling establishment success rate.</rdfs:comment>
-        <rdfs:label xml:lang="en">S1 Signaling Establishment Success Rate</rdfs:label>
+        <rdfs:comment xml:lang="en">S1 (S1 standardized interface between eNB and Evolved Packet Core) signalling establishment success rate.</rdfs:comment>
+        <rdfs:label xml:lang="en">S1 Signalling Establishment Success Rate</rdfs:label>
     </owl:Class>
 
 
@@ -619,7 +698,7 @@
     <!-- http://purl.org/iot/vocab/m3-lite#AirThermometer -->
 
     <owl:Class rdf:about="&mthreelite;AirThermometer">
-        <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
+        <rdfs:subClassOf rdf:resource="&mthreelite;Thermometer"/>
         <rdfs:comment xml:lang="en">Device to measure the Air temperature of either indoor or outdoor atmosphere.</rdfs:comment>
         <rdfs:label xml:lang="en">Air Thermometer</rdfs:label>
     </owl:Class>
@@ -840,7 +919,7 @@
     <!-- http://purl.org/iot/vocab/m3-lite#BoardThermometer -->
 
     <owl:Class rdf:about="&mthreelite;BoardThermometer">
-        <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
+        <rdfs:subClassOf rdf:resource="&mthreelite;Thermometer"/>
         <rdfs:comment xml:lang="en">Device used to measure board temperature.</rdfs:comment>
         <rdfs:label xml:lang="en">Board Thermometer</rdfs:label>
     </owl:Class>
@@ -860,7 +939,7 @@
     <!-- http://purl.org/iot/vocab/m3-lite#BodyThermometer -->
 
     <owl:Class rdf:about="&mthreelite;BodyThermometer">
-        <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
+        <rdfs:subClassOf rdf:resource="&mthreelite;Thermometer"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&mthreelite;hasDomainOfInterest"/>
@@ -1007,7 +1086,7 @@
     <!-- http://purl.org/iot/vocab/m3-lite#Centibar -->
 
     <owl:Class rdf:about="&mthreelite;Centibar">
-        <rdfs:subClassOf rdf:resource="&qudt;Bar"/>
+        <rdfs:subClassOf rdf:resource="&mthreelite;Bar"/>
         <rdfs:comment xml:lang="en">The centibar is a unit of pressure defined as 1e-2 bar.</rdfs:comment>
         <rdfs:label xml:lang="en">Centibar</rdfs:label>
     </owl:Class>
@@ -1017,7 +1096,7 @@
     <!-- http://purl.org/iot/vocab/m3-lite#Centimetre -->
 
     <owl:Class rdf:about="&mthreelite;Centimetre">
-        <rdfs:subClassOf rdf:resource="&mthreelite;Meter"/>
+        <rdfs:subClassOf rdf:resource="&mthreelite;Metre"/>
         <rdfs:label xml:lang="en">Centimetre, Centimeter</rdfs:label>
         <rdfs:comment xml:lang="en">A metric unit of length, equal to one hundredth of a metre.</rdfs:comment>
     </owl:Class>
@@ -1027,7 +1106,7 @@
     <!-- http://purl.org/iot/vocab/m3-lite#ChemicalAgentAtmosphericConcentration -->
 
     <owl:Class rdf:about="&mthreelite;ChemicalAgentAtmosphericConcentration">
-        <rdfs:subClassOf rdf:resource="&qu;QuantityKind"/>
+        <rdfs:subClassOf rdf:resource="&mthreelite;ChemicalAgentConcentration"/>
         <rdfs:comment xml:lang="en">Measure of Chemical Agent Atmospheric Concentration</rdfs:comment>
         <rdfs:label xml:lang="en">Chemical Agent Atmospheric Concentration Quantity Kind</rdfs:label>
     </owl:Class>
@@ -1168,7 +1247,7 @@
 
     <owl:Class rdf:about="&mthreelite;Conductivity">
         <rdfs:subClassOf rdf:resource="&qu;QuantityKind"/>
-        <rdfs:comment xml:lang="en">Measure of ability to conduct electricity. It is measured in siemens per meter (S/m).</rdfs:comment>
+        <rdfs:comment xml:lang="en">Measure of ability to conduct electricity. It is measured in siemens per metre (S/m).</rdfs:comment>
         <rdfs:label xml:lang="en">Conductivity</rdfs:label>
     </owl:Class>
 
@@ -1389,7 +1468,7 @@
 
     <owl:Class rdf:about="&mthreelite;Direction">
         <rdfs:label xml:lang="en">Direction</rdfs:label>
-        <rdfs:comment xml:lang="en">Measurments of sensors are affected by the direction of the sensing device. This concept is used to reflect it.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Measurements of sensors are affected by the direction of the sensing device. This concept is used to reflect it.</rdfs:comment>
     </owl:Class>
 
 
@@ -1459,7 +1538,7 @@
     <!-- http://purl.org/iot/vocab/m3-lite#DomainOfInterest -->
 
     <owl:Class rdf:about="&mthreelite;DomainOfInterest">
-        <rdfs:comment xml:lang="en">Domain of Interest.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Application Domain for example: health, environment, etc.</rdfs:comment>
         <rdfs:label xml:lang="en">Domain Of Interest</rdfs:label>
     </owl:Class>
 
@@ -1476,7 +1555,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An actuator to automatically open/close the door.</rdfs:comment>
-        <rdfs:label xml:lang="en">Door Accuating Device</rdfs:label>
+        <rdfs:label xml:lang="en">Door Actuating Device</rdfs:label>
     </owl:Class>
 
 
@@ -1539,7 +1618,7 @@
                 <owl:someValuesFrom rdf:resource="&mthreelite;Transportation"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">The actuator for turing ESP on/off.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The actuator for turning ESP on/off.</rdfs:comment>
         <rdfs:label xml:lang="en">ESP (Electronic Stability Program) Actuating device</rdfs:label>
     </owl:Class>
 
@@ -1621,7 +1700,7 @@
 
     <owl:Class rdf:about="&mthreelite;ElectricalResistance">
         <rdfs:subClassOf rdf:resource="&qu;QuantityKind"/>
-        <rdfs:comment xml:lang="en">The electrical resitance of an electrical conductor is the opposition to the passage of an electric current through that conductor.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The electrical resistance of an electrical conductor is the opposition to the passage of an electric current through that conductor.</rdfs:comment>
         <rdfs:label xml:lang="en">Electrical Resistance</rdfs:label>
     </owl:Class>
 
@@ -1631,7 +1710,7 @@
 
     <owl:Class rdf:about="&mthreelite;ElectricalSensor">
         <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
-        <rdfs:comment xml:lang="en">Electrical Sensor.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Sensor that measures the changes in electrical or magnetic signals based on an environmental input.</rdfs:comment>
         <rdfs:label xml:lang="en">Electrical Sensor</rdfs:label>
     </owl:Class>
 
@@ -1802,7 +1881,7 @@
                 <owl:someValuesFrom rdf:resource="&mthreelite;Transportation"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">The actuator for turing on or off the fog lamp.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The actuator for turning on or off the fog lamp.</rdfs:comment>
         <rdfs:label xml:lang="en">Fog Lamp Actuating Device</rdfs:label>
     </owl:Class>
 
@@ -1988,17 +2067,17 @@
     <owl:Class rdf:about="&mthreelite;GramPerCubicMetre">
         <rdfs:subClassOf rdf:resource="&qu;Unit"/>
         <rdfs:comment xml:lang="en">It is defined by mass in grams divided by volume in cubic metres.</rdfs:comment>
-        <rdfs:label xml:lang="en">Gram Per Cubic Metre</rdfs:label>
+        <rdfs:label xml:lang="en">Gram Per Cubic Metre, Gram Per Cubic Meter</rdfs:label>
     </owl:Class>
 
 
 
-    <!-- http://purl.org/iot/vocab/m3-lite#GramPerLiter -->
+    <!-- http://purl.org/iot/vocab/m3-lite#GramPerLitre -->
 
-    <owl:Class rdf:about="&mthreelite;GramPerLiter">
+    <owl:Class rdf:about="&mthreelite;GramPerLitre">
         <rdfs:subClassOf rdf:resource="&qu;Unit"/>
-        <rdfs:comment xml:lang="en">It shows how many grams of a certain substance are present in one liter of a usually liquid or gaseous mixture.</rdfs:comment>
-        <rdfs:label xml:lang="en">Gram Per Liter (g/L)</rdfs:label>
+        <rdfs:comment xml:lang="en">It shows how many grams of a certain substance are present in one litre of a usually liquid or gaseous mixture.</rdfs:comment>
+        <rdfs:label xml:lang="en">Gram Per Litre, Gram Per Liter (g/L)</rdfs:label>
     </owl:Class>
 
 
@@ -2035,7 +2114,7 @@
                 <owl:someValuesFrom rdf:resource="&mthreelite;Transportation"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">A gyroscope is a device for measuring or maintening orientation.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A gyroscope is a device for measuring or maintaining orientation.</rdfs:comment>
         <rdfs:label xml:lang="en">Gyroscope Sensor</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://casas.wsu.edu/owl/cose.owl#Gyroscope"/>
     </owl:Class>
@@ -2046,7 +2125,7 @@
 
     <owl:Class rdf:about="&mthreelite;H2SSensor">
         <rdfs:subClassOf rdf:resource="&mthreelite;GaseousPollutantSensor"/>
-        <rdfs:comment xml:lang="en">Device used to measure of hydrogen sulfide in the environment.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Device used to measure of hydrogen sulphide in the environment.</rdfs:comment>
         <rdfs:label xml:lang="en">H2S Sensor</rdfs:label>
     </owl:Class>
 
@@ -2210,7 +2289,7 @@
     <!-- http://purl.org/iot/vocab/m3-lite#Inch -->
 
     <owl:Class rdf:about="&mthreelite;Inch">
-        <rdfs:subClassOf rdf:resource="&mthreelite;Meter"/>
+        <rdfs:subClassOf rdf:resource="&mthreelite;Metre"/>
         <rdfs:comment xml:lang="en">Length in inches.</rdfs:comment>
         <rdfs:label xml:lang="en">Inch</rdfs:label>
     </owl:Class>
@@ -2316,11 +2395,11 @@
 
 
 
-    <!-- http://purl.org/iot/vocab/m3-lite#KilometerPerHour -->
+    <!-- http://purl.org/iot/vocab/m3-lite#KilometrePerHour -->
 
-    <owl:Class rdf:about="&mthreelite;KilometerPerHour">
-        <rdfs:subClassOf rdf:resource="&mthreelite;MeterPerSecond"/>
-        <rdfs:label xml:lang="en">Kilometer Per Hour</rdfs:label>
+    <owl:Class rdf:about="&mthreelite;KilometrePerHour">
+        <rdfs:subClassOf rdf:resource="&mthreelite;MetrePerSecond"/>
+        <rdfs:label xml:lang="en">Kilometre Per Hour, Kilometer Per Hour</rdfs:label>
         <rdfs:comment xml:lang="en">It is a unit of speed, expressing the number of kilometres travelled in one hour.</rdfs:comment>
         <rdfs:seeAlso>http://data.qudt.org/qudt/owl/1.0.0/unit.owl#KilometerPerHour</rdfs:seeAlso>
     </owl:Class>
@@ -2330,7 +2409,7 @@
     <!-- http://purl.org/iot/vocab/m3-lite#Kilometre -->
 
     <owl:Class rdf:about="&mthreelite;Kilometre">
-        <rdfs:subClassOf rdf:resource="&mthreelite;Meter"/>
+        <rdfs:subClassOf rdf:resource="&mthreelite;Metre"/>
         <rdfs:label xml:lang="en">Kilometre, Kilometer</rdfs:label>
         <rdfs:comment xml:lang="en">A metric unit of measurement equal to 1,000 metres (approx 0.62 miles).</rdfs:comment>
     </owl:Class>
@@ -2348,7 +2427,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An actuator to automatically switch on/off the lamp.</rdfs:comment>
-        <rdfs:label xml:lang="en">Lamp Actuatating Device</rdfs:label>
+        <rdfs:label xml:lang="en">Lamp Actuating Device</rdfs:label>
     </owl:Class>
 
 
@@ -2423,12 +2502,12 @@
 
 
 
-    <!-- http://purl.org/iot/vocab/m3-lite#Liter -->
+    <!-- http://purl.org/iot/vocab/m3-lite#Litre -->
 
-    <owl:Class rdf:about="&mthreelite;Liter">
+    <owl:Class rdf:about="&mthreelite;Litre">
         <rdfs:subClassOf rdf:resource="&qu;Unit"/>
         <rdfs:comment xml:lang="en">A metric unit of capacity defined as the volume of one kilogram of water under standard conditions. It is equal to 1,000 cubic centimetres.</rdfs:comment>
-        <rdfs:label xml:lang="en">Liter, Litre</rdfs:label>
+        <rdfs:label xml:lang="en">Litre, Liter</rdfs:label>
         <rdfs:seeAlso>http://purl.oclc.org/NET/ssnx/qu/unit#litre</rdfs:seeAlso>
     </owl:Class>
 
@@ -2565,36 +2644,36 @@
 
 
 
-    <!-- http://purl.org/iot/vocab/m3-lite#Meter -->
+    <!-- http://purl.org/iot/vocab/m3-lite#Metre -->
 
-    <owl:Class rdf:about="&mthreelite;Meter">
+    <owl:Class rdf:about="&mthreelite;Metre">
         <rdfs:subClassOf rdf:resource="&qu;Unit"/>
         <rdfs:comment xml:lang="en">It is the unit of length.</rdfs:comment>
-        <rdfs:label xml:lang="en">Meter</rdfs:label>
+        <rdfs:label xml:lang="en">Metre, Meter</rdfs:label>
         <rdfs:seeAlso rdf:resource="&qudt;Meter"/>
         <rdfs:seeAlso rdf:resource="http://sweet.jpl.nasa.gov/ontology/units.owl#meter"/>
     </owl:Class>
 
 
 
-    <!-- http://purl.org/iot/vocab/m3-lite#MeterPerSecond -->
+    <!-- http://purl.org/iot/vocab/m3-lite#MetrePerSecond -->
 
-    <owl:Class rdf:about="&mthreelite;MeterPerSecond">
+    <owl:Class rdf:about="&mthreelite;MetrePerSecond">
         <rdfs:subClassOf rdf:resource="&qu;Unit"/>
-        <rdfs:comment xml:lang="en">A speed/velocity unit which is equal to the speed of an object traveling 1 meter distance in one second.</rdfs:comment>
-        <rdfs:label xml:lang="en">Meter Per Second (m/s)</rdfs:label>
+        <rdfs:comment xml:lang="en">A speed/velocity unit which is equal to the speed of an object traveling 1 metre distance in one second.</rdfs:comment>
+        <rdfs:label xml:lang="en">Metre Per Second, Meter Per Second  (m/s)</rdfs:label>
         <rdfs:seeAlso rdf:resource="&qudt;MeterPerSecond"/>
         <rdfs:seeAlso>http://purl.oclc.org/NET/ssnx/qu/unit#metrePerSecond</rdfs:seeAlso>
     </owl:Class>
 
 
 
-    <!-- http://purl.org/iot/vocab/m3-lite#MeterPerSecondSquare -->
+    <!-- http://purl.org/iot/vocab/m3-lite#MetrePerSecondSquare -->
 
-    <owl:Class rdf:about="&mthreelite;MeterPerSecondSquare">
+    <owl:Class rdf:about="&mthreelite;MetrePerSecondSquare">
         <rdfs:subClassOf rdf:resource="&qu;Unit"/>
         <rdfs:comment xml:lang="en">It is the unit of acceleration.</rdfs:comment>
-        <rdfs:label xml:lang="en">Meter Per Second Square</rdfs:label>
+        <rdfs:label xml:lang="en">Metre Per Second Square, Meter Per Second Square</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://purl.oclc.org/NET/ssnx/qu/unit#metrePerSecondSquared"/>
     </owl:Class>
 
@@ -2710,7 +2789,7 @@
     <!-- http://purl.org/iot/vocab/m3-lite#Miles -->
 
     <owl:Class rdf:about="&mthreelite;Miles">
-        <rdfs:subClassOf rdf:resource="&mthreelite;Meter"/>
+        <rdfs:subClassOf rdf:resource="&mthreelite;Metre"/>
         <rdfs:comment xml:lang="en">It is a unit of length that is equal to 1,760 yards (approx. 1.609 kilometres).</rdfs:comment>
         <rdfs:label xml:lang="en">Miles</rdfs:label>
     </owl:Class>
@@ -2740,7 +2819,7 @@
     <!-- http://purl.org/iot/vocab/m3-lite#Millibar -->
 
     <owl:Class rdf:about="&mthreelite;Millibar">
-        <rdfs:subClassOf rdf:resource="&qudt;Bar"/>
+        <rdfs:subClassOf rdf:resource="&mthreelite;Bar"/>
         <rdfs:label xml:lang="en">Millibar</rdfs:label>
         <rdfs:comment xml:lang="en">One thousandth of a bar.</rdfs:comment>
     </owl:Class>
@@ -2771,8 +2850,8 @@
 
     <owl:Class rdf:about="&mthreelite;MilligramPerSquareMetre">
         <rdfs:subClassOf rdf:resource="&qu;Unit"/>
-        <rdfs:comment xml:lang="en">A dose unit which is equal to 1 milligram of a substance per square meter of surface area of the recipient subject.</rdfs:comment>
-        <rdfs:label xml:lang="en">Milligram Per Square Metre</rdfs:label>
+        <rdfs:comment xml:lang="en">A dose unit which is equal to 1 milligram of a substance per square metre of surface area of the recipient subject.</rdfs:comment>
+        <rdfs:label xml:lang="en">Milligram Per Square Metre, Milligram Per Square Meter</rdfs:label>
         <rdfs:seeAlso>http://purl.oclc.org/NET/ssnx/qu/unit#milligramPerSquareMetre</rdfs:seeAlso>
     </owl:Class>
 
@@ -2781,19 +2860,19 @@
     <!-- http://purl.org/iot/vocab/m3-lite#Millilitre -->
 
     <owl:Class rdf:about="&mthreelite;Millilitre">
-        <rdfs:subClassOf rdf:resource="&mthreelite;Liter"/>
+        <rdfs:subClassOf rdf:resource="&mthreelite;Litre"/>
         <rdfs:comment xml:lang="en">One thousandth of a litre (0.002 pint).</rdfs:comment>
-        <rdfs:label xml:lang="en">Millilitre</rdfs:label>
+        <rdfs:label xml:lang="en">Millilitre, Milliliter</rdfs:label>
     </owl:Class>
 
 
 
-    <!-- http://purl.org/iot/vocab/m3-lite#MillimeterPerHour -->
+    <!-- http://purl.org/iot/vocab/m3-lite#MillimetrePerHour -->
 
-    <owl:Class rdf:about="&mthreelite;MillimeterPerHour">
+    <owl:Class rdf:about="&mthreelite;MillimetrePerHour">
         <rdfs:subClassOf rdf:resource="&qu;Unit"/>
-        <rdfs:comment xml:lang="en">A unit of both speed (scalar) and velocity (vector), defined as the distance of one millimeter travelled per unit hour.</rdfs:comment>
-        <rdfs:label xml:lang="en">Millimeter Per Hour, Millimetre Per Hour</rdfs:label>
+        <rdfs:comment xml:lang="en">A unit of both speed (scalar) and velocity (vector), defined as the distance of one millimetre travelled per unit hour.</rdfs:comment>
+        <rdfs:label xml:lang="en">Millimetre Per Hour, Millimeter Per Hour</rdfs:label>
         <rdfs:seeAlso>http://purl.oclc.org/NET/ssnx/qu/unit#millimetrePerHour</rdfs:seeAlso>
     </owl:Class>
 
@@ -2802,7 +2881,7 @@
     <!-- http://purl.org/iot/vocab/m3-lite#Millimetre -->
 
     <owl:Class rdf:about="&mthreelite;Millimetre">
-        <rdfs:subClassOf rdf:resource="&mthreelite;Meter"/>
+        <rdfs:subClassOf rdf:resource="&mthreelite;Metre"/>
         <rdfs:label xml:lang="en">Millimetre, Millimeter</rdfs:label>
         <rdfs:comment xml:lang="en">One thousandth of a metre (0.039 in).</rdfs:comment>
     </owl:Class>
@@ -2819,11 +2898,11 @@
 
 
 
-    <!-- http://purl.org/iot/vocab/m3-lite#MillivoltPerMeter -->
+    <!-- http://purl.org/iot/vocab/m3-lite#MillivoltPerMetre -->
 
-    <owl:Class rdf:about="&mthreelite;MillivoltPerMeter">
+    <owl:Class rdf:about="&mthreelite;MillivoltPerMetre">
         <rdfs:subClassOf rdf:resource="&qu;Unit"/>
-        <rdfs:label xml:lang="en">Millivolt Per Meter, Millivolt Per Metre</rdfs:label>
+        <rdfs:label xml:lang="en">Millivolt Per Metre, Millivolt Per Meter</rdfs:label>
         <rdfs:comment xml:lang="en">It is a measure of the intensity of the signal of a radio transmitter.</rdfs:comment>
     </owl:Class>
 
@@ -2863,18 +2942,18 @@
 
     <owl:Class rdf:about="&mthreelite;MmHg">
         <rdfs:subClassOf rdf:resource="&qu;Unit"/>
-        <rdfs:comment xml:lang="en">A millimeter of mercury is a manometric unit of pressure, formerly defined as the extra pressure generated by a column of mercury one millimetre high and now defined as precisely 133.322387415 pascals. It is denoted by the symbol mmHg. It  is used to measure blood pressure measurements (systolic and diastolic).</rdfs:comment>
+        <rdfs:comment xml:lang="en">A millimetre of mercury is a manometric unit of pressure, formerly defined as the extra pressure generated by a column of mercury one millimetre high and now defined as precisely 133.322387415 pascals. It is denoted by the symbol mmHg. It  is used to measure blood pressure measurements (systolic and diastolic).</rdfs:comment>
         <rdfs:label xml:lang="en">MmHg</rdfs:label>
     </owl:Class>
 
 
 
-    <!-- http://purl.org/iot/vocab/m3-lite#MmolPerLiter -->
+    <!-- http://purl.org/iot/vocab/m3-lite#MmolPerLitre -->
 
-    <owl:Class rdf:about="&mthreelite;MmolPerLiter">
+    <owl:Class rdf:about="&mthreelite;MmolPerLitre">
         <rdfs:subClassOf rdf:resource="&qu;Unit"/>
-        <rdfs:comment xml:lang="en">It is the amount of a substance that corresponds to its formula mass in milligrams. MmolPerLiter is used to measure cholesterol.</rdfs:comment>
-        <rdfs:label xml:lang="en">Mmol Per Liter</rdfs:label>
+        <rdfs:comment xml:lang="en">It is the amount of a substance that corresponds to its formula mass in milligrams. MmolPerLitre is used to measure cholesterol.</rdfs:comment>
+        <rdfs:label xml:lang="en">Mmol Per Litre, Mmol Per Liter</rdfs:label>
     </owl:Class>
 
 
@@ -2987,10 +3066,10 @@
 
     <!-- http://purl.org/iot/vocab/m3-lite#Neighbors -->
 
-    <owl:Class rdf:about="&mthreelite;Neighbors">
+    <owl:Class rdf:about="&mthreelite;Neighbours">
         <rdfs:subClassOf rdf:resource="&mthreelite;SoundSource"/>
-        <rdfs:comment xml:lang="en">When the source of the sound were noisy neighbors.</rdfs:comment>
-        <rdfs:label xml:lang="en">Neighbors Sound Source</rdfs:label>
+        <rdfs:comment xml:lang="en">When the source of the sound were noisy neighbours.</rdfs:comment>
+        <rdfs:label xml:lang="en">Neighbours Sound Source</rdfs:label>
     </owl:Class>
 
 
@@ -3015,18 +3094,12 @@
 
 
 
-    <!-- http://purl.org/iot/vocab/m3-lite#OccupancyDetector -->
+    <!-- http://purl.org/iot/vocab/m3-lite#PresenceDetector -->
 
-    <owl:Class rdf:about="&mthreelite;OccupancyDetector">
+    <owl:Class rdf:about="&mthreelite;PresenceDetector">
         <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&mthreelite;hasDomainOfInterest"/>
-                <owl:someValuesFrom rdf:resource="&mthreelite;BuildingAutomation"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Device used to detect if on object is occupied or not.</rdfs:comment>
-        <rdfs:label xml:lang="en">Occupancy Detector</rdfs:label>
+        <rdfs:label xml:lang="en">Presence Detector</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://casas.wsu.edu/owl/cose.owl#PassiveInfraredSensor"/>
     </owl:Class>
 
@@ -3036,7 +3109,7 @@
 
     <owl:Class rdf:about="&mthreelite;Odometer">
         <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
-        <rdfs:comment xml:lang="en">An odometer or odograph is an instrument that indicates distance traveled by a vehicle, such as bicycle or automobile.</rdfs:comment>
+        <rdfs:comment xml:lang="en">An odometer or odograph is an instrument that indicates distance travelled by a vehicle, such as bicycle or automobile.</rdfs:comment>
         <rdfs:label xml:lang="en">Odometer</rdfs:label>
     </owl:Class>
 
@@ -3105,6 +3178,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&mthreelite;hasDomainOfInterest"/>
                 <owl:someValuesFrom rdf:resource="&mthreelite;Agriculture"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&mthreelite;hasDomainOfInterest"/>
+                <owl:someValuesFrom rdf:resource="&mthreelite;Environment"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Device used to detect PH level.</rdfs:comment>
@@ -3209,7 +3288,7 @@
 
     <owl:Class rdf:about="&mthreelite;Precipitation">
         <rdfs:subClassOf rdf:resource="&qu;QuantityKind"/>
-        <rdfs:comment xml:lang="en">It is any product of the condensation of atmospheric water vapor that falls under gravity.</rdfs:comment>
+        <rdfs:comment xml:lang="en">It is any product of the condensation of atmospheric water vapour that falls under gravity.</rdfs:comment>
         <rdfs:label xml:lang="en">Precipitation</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://archive.knoesis.org/research/semsci/application_domain/sem_sensor/ont/sensor-observation.owlPrecipitatiowl:onProperty"/>
         <rdfs:seeAlso rdf:resource="http://paul.staroch.name/thesis/SmartHomeWeather.owl#Precipitation"/>
@@ -3407,7 +3486,7 @@
 
     <owl:Class rdf:about="&mthreelite;Radian">
         <rdfs:subClassOf rdf:resource="&qu;Unit"/>
-        <rdfs:comment xml:lang="en">The radian is a unit of angular measure defined such that an angle of one radian subtended from the center of a unit circle produces an arc with arc length 1.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The radian is a unit of angular measure defined such that an angle of one radian subtended from the centre of a unit circle produces an arc with arc length 1.</rdfs:comment>
         <rdfs:label xml:lang="en">Radian</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://sweet.jpl.nasa.gov/ontology/units.owl#radian"/>
     </owl:Class>
@@ -3512,7 +3591,7 @@
     <!-- http://purl.org/iot/vocab/m3-lite#RoadSurfaceThermometer -->
 
     <owl:Class rdf:about="&mthreelite;RoadSurfaceThermometer">
-        <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
+        <rdfs:subClassOf rdf:resource="&mthreelite;Thermometer"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&mthreelite;hasDomainOfInterest"/>
@@ -3729,7 +3808,7 @@
 
     <owl:Class rdf:about="&mthreelite;Sirens">
         <rdfs:subClassOf rdf:resource="&mthreelite;SoundSource"/>
-        <rdfs:comment xml:lang="en">When source of the sound were sirens either from ambulence, police car or factory etc.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When source of the sound were sirens either from ambulance, police car or factory etc.</rdfs:comment>
         <rdfs:label xml:lang="en">Sirens Sound Source</rdfs:label>
     </owl:Class>
 
@@ -3761,7 +3840,7 @@
                 <owl:someValuesFrom rdf:resource="&mthreelite;Health"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">Device used to detecte Skin Conductance.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Device used to detect Skin Conductance.</rdfs:comment>
         <rdfs:label xml:lang="en">Skin Conductance Sensor</rdfs:label>
     </owl:Class>
 
@@ -3824,7 +3903,7 @@
     <!-- http://purl.org/iot/vocab/m3-lite#SoilHumiditySensor -->
 
     <owl:Class rdf:about="&mthreelite;SoilHumiditySensor">
-        <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
+        <rdfs:subClassOf rdf:resource="&mthreelite;HumiditySensor"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&mthreelite;hasDomainOfInterest"/>
@@ -3958,7 +4037,7 @@
     <!-- http://purl.org/iot/vocab/m3-lite#Source -->
 
     <owl:Class rdf:about="&mthreelite;Source">
-        <rdfs:comment xml:lang="en">Environmental Source.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Environmental Origin of a particular observation. With respect to one kind of Source (Sound source), it can be coming from traffic, siren of a police car, etc.</rdfs:comment>
         <rdfs:label xml:lang="en">Source</rdfs:label>
     </owl:Class>
 
@@ -4328,7 +4407,7 @@
     <!-- http://purl.org/iot/vocab/m3-lite#VehicleCountSensor -->
 
     <owl:Class rdf:about="&mthreelite;VehicleCountSensor">
-        <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
+        <rdfs:subClassOf rdf:resource="&mthreelite;Counter"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&mthreelite;hasDomainOfInterest"/>
@@ -4430,7 +4509,7 @@
 
     <owl:Class rdf:about="&mthreelite;VoltageSensor">
         <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
-        <rdfs:comment xml:lang="en">A device designed to respond to physical stimuli such as temperature, light, magnetism, or movement, and to transmit resulting impulses for interpretation.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Device which can measure the difference in electric potential energy between two points per unit electric charge.</rdfs:comment>
         <rdfs:label xml:lang="en">Voltage Sensor</rdfs:label>
     </owl:Class>
 
@@ -4484,22 +4563,23 @@
 
 
 
-    <!-- http://purl.org/iot/vocab/m3-lite#WattPerSquareMeter -->
+    <!-- http://purl.org/iot/vocab/m3-lite#WattPerSquareMetre -->
 
-    <owl:Class rdf:about="&mthreelite;WattPerSquareMeter">
+    <owl:Class rdf:about="&mthreelite;WattPerSquareMetre">
         <rdfs:subClassOf rdf:resource="&qu;Unit"/>
         <rdfs:comment xml:lang="en">It is the SI unit for radiative and other energy fluxes.</rdfs:comment>
         <rdfs:label xml:lang="en">Watt Per Square Metre, Watt Per Square Meter</rdfs:label>
         <rdfs:seeAlso>http://purl.oclc.org/NET/ssnx/qu/unit#wattPerSquareMetre</rdfs:seeAlso>
     </owl:Class>
 
-    <!--  http://purl.org/iot/vocab/m3-lite#MicroWattPerSquareCentimeter -->
+    <!--  http://purl.org/iot/vocab/m3-lite#MicrowattPerSquareCentimetre -->
 
-    <owl:Class rdf:about="&mthreelite;MicroWattPerSquareCentiMeter">
-        <rdfs:subClassOf rdf:resource="&qu;WattPerSquareMeter"/>
+    <owl:Class rdf:about="&mthreelite;MicrowattPerSquareCentimetre">
+        <rdfs:subClassOf rdf:resource="&mthreelite;WattPerSquareMetre"/>
         <rdfs:comment xml:lang="en">It is one of the unit for radiative and other energy fluxes.</rdfs:comment>
         <rdfs:label xml:lang="en">Microwatt Per Square Centimetre, Microwatt Per Square Centimeter</rdfs:label>
     </owl:Class>
+
 
     <!-- http://purl.org/iot/vocab/m3-lite#Weather -->
 
@@ -4728,9 +4808,9 @@
 
 
 
-    <!-- http://purl.org/iot/vocab/m3-lite#chemicalAgentAtmosphericConcentrationO3 -->
+    <!-- http://purl.org/iot/vocab/m3-lite#ChemicalAgentAtmosphericConcentrationO3 -->
 
-    <owl:Class rdf:about="&mthreelite;chemicalAgentAtmosphericConcentrationO3">
+    <owl:Class rdf:about="&mthreelite;ChemicalAgentAtmosphericConcentrationO3">
         <rdfs:subClassOf rdf:resource="&mthreelite;ChemicalAgentAtmosphericConcentration"/>
         <rdfs:comment xml:lang="en">The concentration of ozone (O3) gas suspended in the atmosphere.</rdfs:comment>
         <rdfs:label xml:lang="en">Chemical Agent Atmospheric Concentration O3</rdfs:label>
@@ -4738,9 +4818,9 @@
 
 
 
-    <!-- http://purl.org/iot/vocab/m3-lite#intDlThroughputKbps -->
+    <!-- http://purl.org/iot/vocab/m3-lite#IntDlThroughputKbps -->
 
-    <owl:Class rdf:about="&mthreelite;intDlThroughputKbps">
+    <owl:Class rdf:about="&mthreelite;IntDlThroughputKbps">
         <rdfs:subClassOf rdf:resource="&mthreelite;Communication"/>
         <rdfs:comment xml:lang="en">Downlink Throughput.</rdfs:comment>
         <rdfs:label xml:lang="en">Downlink Throughput</rdfs:label>
@@ -4748,9 +4828,9 @@
 
 
 
-    <!-- http://purl.org/iot/vocab/m3-lite#intUlPacketLoss -->
+    <!-- http://purl.org/iot/vocab/m3-lite#IntUlPacketLoss -->
 
-    <owl:Class rdf:about="&mthreelite;intUlPacketLoss">
+    <owl:Class rdf:about="&mthreelite;IntUlPacketLoss">
         <rdfs:subClassOf rdf:resource="&mthreelite;Communication"/>
         <rdfs:comment xml:lang="en">Uplink Packet Loss.</rdfs:comment>
         <rdfs:label xml:lang="en">Uplink Packet Loss</rdfs:label>
@@ -4758,14 +4838,320 @@
 
 
 
-    <!-- http://purl.org/iot/vocab/m3-lite#intUlThroughputKbps -->
+    <!-- http://purl.org/iot/vocab/m3-lite#IntUlThroughputKbps -->
 
-    <owl:Class rdf:about="&mthreelite;intUlThroughputKbps">
+    <owl:Class rdf:about="&mthreelite;IntUlThroughputKbps">
         <rdfs:subClassOf rdf:resource="&mthreelite;Communication"/>
         <rdfs:comment xml:lang="en">Uplink Throughput.</rdfs:comment>
         <rdfs:label xml:lang="en">Uplink Throughput</rdfs:label>
     </owl:Class>
+
+<!-- http://purl.org/iot/vocab/m3-lite#Item -->
+
+    <owl:Class rdf:about="&mthreelite;Item">
+        <rdfs:subClassOf rdf:resource="&qu;Unit"/>
+        <rdfs:comment xml:lang="en">Each of the accountable elements within a group.</rdfs:comment>
+        <rdfs:label xml:lang="en">Item</rdfs:label>
+    </owl:Class>
+    
+
+    <!-- http://purl.org/iot/vocab/m3-lite#Count -->
+
+    <owl:Class rdf:about="&mthreelite;Count">
+        <rdfs:subClassOf rdf:resource="&qu;QuantityKind"/>
+        <rdfs:comment xml:lang="en">Number of available particular things.</rdfs:comment>
+        <rdfs:label xml:lang="en">Count</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#DoorStatus -->
+
+    <owl:Class rdf:about="&mthreelite;DoorStatus">
+        <rdfs:subClassOf rdf:resource="&qu;QuantityKind"/>
+        <rdfs:comment xml:lang="en">Describes if a door is OPEN or CLOSED.</rdfs:comment>
+        <rdfs:label xml:lang="en">Door Status</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#CountAvailableBicycles -->
+
+    <owl:Class rdf:about="&mthreelite;CountAvailableBicycles">
+        <rdfs:subClassOf rdf:resource="&mthreelite;Count"/>
+        <rdfs:comment xml:lang="en">Number of available bicycles at a particular bicycle docking station.</rdfs:comment>
+        <rdfs:label xml:lang="en">Count Available Bicycles</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#CountAvailableTaxis -->
+
+    <owl:Class rdf:about="&mthreelite;CountAvailableTaxis">
+        <rdfs:subClassOf rdf:resource="&mthreelite;Count"/>
+        <rdfs:comment xml:lang="en">Number of taxis available at a particular taxi stop.</rdfs:comment>
+        <rdfs:label xml:lang="en">Count Available Taxis</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#CountEmptyDockingPoints -->
+
+    <owl:Class rdf:about="&mthreelite;CountEmptyDockingPoints">
+        <rdfs:subClassOf rdf:resource="&mthreelite;Count"/>
+        <rdfs:comment xml:lang="en">Number of empty docking points at a particular bicycle docking station.</rdfs:comment>
+        <rdfs:label xml:lang="en">Count Empty Docking Points</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#TrafficIntensity -->
+
+    <owl:Class rdf:about="&mthreelite;TrafficIntensity">
+        <rdfs:subClassOf rdf:resource="&qu;QuantityKind"/>
+        <rdfs:comment xml:lang="en">The intensity of a traffic flow is the number of vehicles passing a cross section of a road in a unit of time.</rdfs:comment>
+        <rdfs:label xml:lang="en">Traffic Intensity</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#ElectricFieldSensor -->
+
+    <owl:Class rdf:about="&mthreelite;ElectricFieldSensor">
+        <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
+        <rdfs:comment xml:lang="en">Scientific instrument for measuring electromagnetic fields (EMF). Most of them measure the electromagnetic radiation flux density (DC fields) or the change in an electromagnetic field over time (AC fields).</rdfs:comment>
+        <rdfs:label xml:lang="en">Electric Field Sensor</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://purl.org/iot/vocab/m3-lite#Counter -->
+
+    <owl:Class rdf:about="&mthreelite;Counter">
+        <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
+        <rdfs:comment xml:lang="en">Sensors that reckons occurrences or repetitions of physical objects, phenomena or events.</rdfs:comment>
+        <rdfs:label xml:lang="en">Counter</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#DoorStateSensor -->
+
+    <owl:Class rdf:about="&mthreelite;DoorStateSensor">
+        <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
+        <rdfs:comment xml:lang="en">This sensor detects if a door is in the state of OPEN or CLOSED.</rdfs:comment>
+        <rdfs:label xml:lang="en">Door State Sensor</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#SoilTemperatureThermometer -->
+
+    <owl:Class rdf:about="&mthreelite;SoilThermometer">
+        <rdfs:subClassOf rdf:resource="&mthreelite;Thermometer"/>
+        <rdfs:comment xml:lang="en">This sensor reports Soil temperature.</rdfs:comment>
+        <rdfs:label xml:lang="en">Soil Thermometer</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://purl.org/iot/vocab/m3-lite#SiemensPerMetre -->
+
+    <owl:Class rdf:about="&mthreelite;SiemensPerMetre">
+        <rdfs:subClassOf rdf:resource="&qu;Unit"/>
+        <rdfs:comment xml:lang="en">Conductivity is measured in Siemens per metre (S/m).</rdfs:comment>
+        <rdfs:label xml:lang="en">Siemens Per Metre, Siemens Per Meter</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#MilligramPerLitre -->
+
+    <owl:Class rdf:about="&mthreelite;MilligramPerLitre">
+        <rdfs:subClassOf rdf:resource="&mthreelite;GramPerLitre"/>
+        <rdfs:comment xml:lang="en">Level of Dissolved substance in liquid measured in mg per litre.</rdfs:comment>
+        <rdfs:label xml:lang="en">Milligram Per Litre, Milligram Per Liter</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#AirHumiditySensor -->
+
+    <owl:Class rdf:about="&mthreelite;AirHumiditySensor">
+        <rdfs:subClassOf rdf:resource="&mthreelite;HumiditySensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&mthreelite;hasDomainOfInterest"/>
+                <owl:someValuesFrom rdf:resource="&mthreelite;Environment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Sensor used to measure air humidity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Air Humidity Sensor</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#WaterThermometer -->
+
+    <owl:Class rdf:about="&mthreelite;WaterThermometer">
+        <rdfs:subClassOf rdf:resource="&mthreelite;Thermometer"/>
+        <rdfs:comment xml:lang="en">This sensor reports Water temperature.</rdfs:comment>
+        <rdfs:label xml:lang="en">Water Thermometer</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#WaterConductivitySensor -->
+
+    <owl:Class rdf:about="&mthreelite;WaterConductivitySensor">
+        <rdfs:subClassOf rdf:resource="&mthreelite;ConductivitySensor"/>
+        <rdfs:comment xml:lang="en">Device used to measure the conductivity of water.</rdfs:comment>
+        <rdfs:label xml:lang="en">Water Conductivity Sensor</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#WaterPHSensor -->
+
+    <owl:Class rdf:about="&mthreelite;WaterPHSensor">
+        <rdfs:subClassOf rdf:resource="&mthreelite;PHSensor"/>
+        <rdfs:comment xml:lang="en">Device used to detect PH level of water.</rdfs:comment>
+        <rdfs:label xml:lang="en">Water PH Sensor</rdfs:label>
+    </owl:Class>
+
+        <!-- http://purl.org/iot/vocab/m3-lite#WaterO2IonSensor -->
+
+    <owl:Class rdf:about="&mthreelite;WaterO2IonSensor">
+        <rdfs:subClassOf rdf:resource="&mthreelite;SensingDevice"/>
+        <rdfs:comment xml:lang="en">Sensor used to measure O2 concentration level in the water.</rdfs:comment>
+        <rdfs:label xml:lang="en">Water O2 Ion Sensor</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#WaterNH4IonSensor -->
+
+    <owl:Class rdf:about="&mthreelite;WaterNH4IonSensor">
+        <rdfs:subClassOf rdf:resource="&mthreelite;SensingDevice"/>
+        <rdfs:comment xml:lang="en">Sensor used to measure NH4 concentration level in the water.</rdfs:comment>
+        <rdfs:label xml:lang="en">Water NH4 Ion Sensor</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#WaterNO3IonSensor -->
+
+    <owl:Class rdf:about="&mthreelite;WaterNO3IonSensor">
+        <rdfs:subClassOf rdf:resource="&mthreelite;SensingDevice"/>
+        <rdfs:comment xml:lang="en">Sensor used to measure NO3 concentration level in the water.</rdfs:comment>
+        <rdfs:label xml:lang="en">Water NO3 Ion Sensor</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#LoRaInterfaceEnergyMeter -->
+
+    <owl:Class rdf:about="&mthreelite;LoRaInterfaceEnergyMeter">
+        <rdfs:subClassOf rdf:resource="&mthreelite;EnergyMeter"/>
+        <rdfs:comment xml:lang="en">Measure the average power consumption of the LoRa interface nodes.</rdfs:comment>
+        <rdfs:label xml:lang="en">LoRa Interface Energy Meter</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#WiFiInterfaceEnergyMeter -->
+
+    <owl:Class rdf:about="&mthreelite;WiFiInterfaceEnergyMeter">
+        <rdfs:subClassOf rdf:resource="&mthreelite;EnergyMeter"/>
+        <rdfs:comment xml:lang="en">Measure the average power consumption of the WiFi interface nodes.</rdfs:comment>
+        <rdfs:label xml:lang="en">WiFi Interface Energy Meter</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#Clock -->
+
+    <owl:Class rdf:about="&mthreelite;Clock">
+        <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
+        <rdfs:comment xml:lang="en">sensor that measures time</rdfs:comment>
+        <rdfs:label xml:lang="en">Clock</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#HumanPresenceDetector -->
+
+    <owl:Class rdf:about="&mthreelite;HumanPresenceDetector">
+        <rdfs:subClassOf rdf:resource="&mthreelite;PresenceDetector"/>
+        <rdfs:comment xml:lang="en">Device used to detect if an object (vehicle, room, place, etc.) is occupied by Human.</rdfs:comment>
+        <rdfs:label xml:lang="en"> Human Presence Detector</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#VehiclePresenceDetector -->
+
+    <owl:Class rdf:about="&mthreelite;VehiclePresenceDetector">
+        <rdfs:subClassOf rdf:resource="&mthreelite;PresenceDetector"/>
+        <rdfs:comment xml:lang="en">Device used to detect if an vehicle is present at a place.</rdfs:comment>
+        <rdfs:label xml:lang="en"> Vehicle Presence Detector</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#ChemicalAgentConcentration -->
+
+    <owl:Class rdf:about="&mthreelite;ChemicalAgentConcentration">
+        <rdfs:subClassOf rdf:resource="&qu;QuantityKind"/>
+        <rdfs:comment xml:lang="en">Measure of Chemical Agent Concentration</rdfs:comment>
+        <rdfs:label xml:lang="en">Chemical Agent Concentration Quantity Kind</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#ChemicalAgentWaterConcentration -->
+
+    <owl:Class rdf:about="&mthreelite;ChemicalAgentWaterConcentration">
+        <rdfs:subClassOf rdf:resource="&mthreelite;ChemicalAgentConcentration"/>
+        <rdfs:comment xml:lang="en">Measure of Chemical Agent Concentration in Water </rdfs:comment>
+        <rdfs:label xml:lang="en">Chemical Agent Water Concentration Quantity Kind</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#ChemicalAgentWaterConcentrationO2 -->
+
+    <owl:Class rdf:about="&mthreelite;ChemicalAgentWaterConcentrationO2">
+        <rdfs:subClassOf rdf:resource="&mthreelite;ChemicalAgentWaterConcentration"/>
+        <rdfs:comment xml:lang="en">Measure of O2 concentration in Water </rdfs:comment>
+        <rdfs:label xml:lang="en">Oxygen (O2) Chemical Agent Water Concentration</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#ChemicalAgentWaterConcentrationNH4Ion -->
+
+    <owl:Class rdf:about="&mthreelite;ChemicalAgentWaterConcentrationNH4Ion">
+        <rdfs:subClassOf rdf:resource="&mthreelite;ChemicalAgentWaterConcentration"/>
+        <rdfs:comment xml:lang="en">Measure of NH4 ion concentration in Water </rdfs:comment>
+        <rdfs:label xml:lang="en">Ammonium ion (NH4+) Chemical Agent Water Concentration</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#ChemicalAgentWaterConcentrationNO3Ion -->
+
+    <owl:Class rdf:about="&mthreelite;ChemicalAgentWaterConcentrationNO3Ion">
+        <rdfs:subClassOf rdf:resource="&mthreelite;ChemicalAgentWaterConcentration"/>
+        <rdfs:comment xml:lang="en">Measure of NO3 ion concentration in Water </rdfs:comment>
+        <rdfs:label xml:lang="en">Nitrate Ion (NO3-) Chemical Agent Water Concentration</rdfs:label>
+    </owl:Class>
+
+        <!-- http://purl.org/iot/vocab/m3-lite#RadiationParticleDetector -->
+
+    <owl:Class rdf:about="&mthreelite;RadiationParticleDetector">
+        <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
+        <rdfs:comment xml:lang="en">A particle detector, also known as a radiation detector or Geiger counter, is a device used to detect, track, and/or identify ionising particles, such as those produced by nuclear decay, cosmic radiation, or reactions in a particle accelerator.</rdfs:comment>
+        <rdfs:label xml:lang="en">Radiation Particle Detector</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#IonisingRadiation -->
+
+    <owl:Class rdf:about="&mthreelite;IonisingRadiation">
+        <rdfs:subClassOf rdf:resource="&qu;QuantityKind"/>
+        <rdfs:comment xml:lang="en">Ionising radiation is radiation that carries enough energy to free electrons from atoms or molecules, thereby ionizing them. Gamma rays, X-rays, and the higher ultraviolet part of the electromagnetic spectrum are ionizing, whereas the lower ultraviolet part of the electromagnetic spectrum, and also the lower part of the spectrum below UV, including visible light (including nearly all types of laser light), infrared, microwaves, and radio waves are all considered non-ionizing radiation.</rdfs:comment>
+        <rdfs:label xml:lang="en">Ionising Radiation</rdfs:label>
+    </owl:Class>
+
+
+    <!-- http://purl.org/iot/vocab/m3-lite#RadiationParticlesPerMinute -->
+
+    <owl:Class rdf:about="&mthreelite;RadiationParticlesPerMinute">
+        <rdfs:subClassOf rdf:resource="&qu;Unit"/>
+        <rdfs:comment xml:lang="en">The number of ionizing events detected in one minute.</rdfs:comment>
+        <rdfs:label xml:lang="en">Radiation Particles Per Minute</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#ChemicalAgentAtmosphericConcentrationDust -->
+
+    <owl:Class rdf:about="&mthreelite;ChemicalAgentAtmosphericConcentrationDust">
+        <rdfs:subClassOf rdf:resource="&mthreelite;ChemicalAgentAtmosphericConcentrationQuantityKind"/>
+        <rdfs:comment xml:lang="en">Measure of the concentration of dust suspended in the air.</rdfs:comment>
+        <rdfs:label xml:lang="en">Chemical Agent Atmospheric Concentration Dust</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#DustSensor -->
+
+    <owl:Class rdf:about="&mthreelite;DustSensor">
+        <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
+        <rdfs:comment xml:lang="en">A sensing device that measures dust particle concentration.</rdfs:comment>
+        <rdfs:label xml:lang="en">Dust Sensor</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#OpticalDustSensor -->
+
+    <owl:Class rdf:about="&mthreelite;OpticalDustSensor">
+        <rdfs:subClassOf rdf:resource="&mthreelite;DustSensor"/>
+        <rdfs:comment xml:lang="en">A sensing device that measures dust particle concentration using optical sensing mean.</rdfs:comment>
+        <rdfs:label xml:lang="en">Optical Dust Sensor</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#Voltage -->
+
+    <owl:Class rdf:about="&mthreelite;Voltage">
+        <rdfs:subClassOf rdf:resource="&qu;QuantityKind"/>
+        <rdfs:comment xml:lang="en">An electromotive force or potential difference expressed in volts (Source Google).</rdfs:comment>
+        <rdfs:label xml:lang="en">Voltage</rdfs:label>
+    </owl:Class>
+
 </rdf:RDF>
+
 
 
 
