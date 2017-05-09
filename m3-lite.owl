@@ -39,12 +39,12 @@
 
     <owl:Ontology rdf:about="http://purl.org/iot/vocab/m3-lite#">
         <owl:versionInfo rdf:datatype="&xsd;decimal">1.1</owl:versionInfo>
-        <dc:issued rdf:datatype="&xsd;date">2015-07-02</dc:issued>
+        <dcterms:issued rdf:datatype="&xsd;date">2015-07-02</dcterms:issued>
         <rdfs:comment xml:lang="en">The M3-lite taxonomy is a taxonomy that enables testbeds to semantically annotate the IoT data produced by heterogeneous devices and store them in a federated datastore such as FIESTA-IoT. We classify devices, the domain of interests (health, smart home, smart kitchen, environmental monitoring, etc.), phenomena and unit of measurements.</rdfs:comment>
         <vann:preferredNamespacePrefix>m3-lite</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>http://purl.org/iot/vocab/m3-lite#</vann:preferredNamespaceUri>
         <dc:title xml:lang="en">The M3-lite Taxonomy</dc:title>
-        <dc:modified>2017-04-20</dc:modified>
+        <dcterms:modified rdf:datatype="&xsd;date">2017-04-20</dcterms:modified>
         <dc:creator xml:lang="en">Rachit Agarwal, Inria, Paris</dc:creator>
         <dc:creator xml:lang="en">David Gomez, UC, Santander</dc:creator>
         <dc:creator xml:lang="en">Tarek Elsaleh, UNIS, Surrey</dc:creator>
@@ -5121,7 +5121,7 @@ We further acknowledge, testbed provider for their valuable comments.
     <!-- http://purl.org/iot/vocab/m3-lite#ChemicalAgentAtmosphericConcentrationDust -->
 
     <owl:Class rdf:about="&mthreelite;ChemicalAgentAtmosphericConcentrationDust">
-        <rdfs:subClassOf rdf:resource="&mthreelite;ChemicalAgentAtmosphericConcentrationQuantityKind"/>
+        <rdfs:subClassOf rdf:resource="&mthreelite;ChemicalAgentAtmosphericConcentration"/>
         <rdfs:comment xml:lang="en">Measure of the concentration of dust suspended in the air.</rdfs:comment>
         <rdfs:label xml:lang="en">Chemical Agent Atmospheric Concentration Dust</rdfs:label>
     </owl:Class>

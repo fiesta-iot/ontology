@@ -81,10 +81,10 @@ We further acknowledge, testbed provider such as SmartSantander, UniS, KETI, Com
         <vann:preferredNamespacePrefix>fiesta-iot</vann:preferredNamespacePrefix>
         <dc:rights>Copyright EU H2020 FIESTA-IoT</dc:rights>
         <rdfs:label rdf:datatype="&xsd;string">FIESTA-IoT</rdfs:label>
-        <dc:issued>2016-04-28</dc:issued>
+        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2016-04-28</dcterms:issued>
         <rdfs:comment xml:lang="en">After a thorough analysis of existing Internet of Things (IoT) related ontologies, we propose FIESTA-IoT Ontology that aims to achieve semantic interoperability among heterogeneous testbeds. The Ontology is framed within the EU H2020 FIESTA-IoT project, that aims to seamlessly support the federation of testbeds through the usage of semantic-based technologies. The  FIESTA-IoT ontology takes inspiration from the well-known Noy et al. methodology for reusing and interconnecting existing ontologies. To build the ontology, we leverage a number of core concepts from various mainstream ontologies and taxonomies, such as Semantic Sensor Network (SSN), M3-lite (a lite version of M3 ontology), WGS84, IoT-lite, Time, and DUL ontology. Please report any errors to rachit.agarwal@inria.fr</rdfs:comment>
         <dc:title xml:lang="en">FIESTA-IoT Ontology</dc:title>
-        <dc:modified>2017-04-20</dc:modified>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-04-20</dcterms:modified>
         <dcterms:bibliographicCitation xml:lang="en">R. Agarwal, D. Fernandez, T. Elsaleh, A. Gyrard, J. Lanza, L. Sanchez, N. Georgantas, V. Issarny, &quot;Unified IoT Ontology to Enable Interoperability and Federation of Testbeds&quot;, 3rd IEEE WF-IoT, Reston, VA, USA, 12-14 December 2016. (https://hal.inria.fr/hal-01386917/document)</dcterms:bibliographicCitation>
         <dcterms:bibliographicCitation xml:lang="en">FIESTA-IoT Consortium (R. Agarwal editor), &quot;Deliverable D3.1.2 Semantic Models for Testbeds, Interoperability and Mobility Support, and Best Practices&quot;, project FIESTA-IoT deliverable, 2016.</dcterms:bibliographicCitation>
         <dcterms:bibliographicCitation xml:lang="en">FIESTA-IoT Consortium (R. Agarwal editor), &quot;Deliverable D3.1.1 Semantic Models for Testbeds, Interoperability and Mobility Support, and Best Practices&quot;, project FIESTA-IoT deliverable, 2016.</dcterms:bibliographicCitation>
@@ -5893,7 +5893,7 @@ O&amp;M allows sensors, methods, instruments, systems, algorithms and process ch
     <!-- http://purl.org/iot/vocab/m3-lite#ChemicalAgentAtmosphericConcentrationDust -->
 
     <owl:Class rdf:about="&mthreelite;ChemicalAgentAtmosphericConcentrationDust">
-        <rdfs:subClassOf rdf:resource="&mthreelite;ChemicalAgentAtmosphericConcentrationQuantityKind"/>
+        <rdfs:subClassOf rdf:resource="&mthreelite;ChemicalAgentAtmosphericConcentration"/>
         <rdfs:comment xml:lang="en">Measure of the concentration of dust suspended in the air.</rdfs:comment>
         <rdfs:label xml:lang="en">Chemical Agent Atmospheric Concentration Dust</rdfs:label>
     </owl:Class>
