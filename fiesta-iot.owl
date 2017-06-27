@@ -5763,7 +5763,7 @@ O&amp;M allows sensors, methods, instruments, systems, algorithms and process ch
     <!-- http://purl.org/iot/vocab/m3-lite#WaterO2IonSensor -->
 
     <owl:Class rdf:about="&mthreelite;WaterO2IonSensor">
-        <rdfs:subClassOf rdf:resource="&mthreelite;SensingDevice"/>
+        <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
         <rdfs:comment xml:lang="en">Sensor used to measure O2 concentration level in the water.</rdfs:comment>
         <rdfs:label xml:lang="en">Water O2 Ion Sensor</rdfs:label>
     </owl:Class>
@@ -5771,7 +5771,7 @@ O&amp;M allows sensors, methods, instruments, systems, algorithms and process ch
     <!-- http://purl.org/iot/vocab/m3-lite#WaterNH4IonSensor -->
 
     <owl:Class rdf:about="&mthreelite;WaterNH4IonSensor">
-        <rdfs:subClassOf rdf:resource="&mthreelite;SensingDevice"/>
+        <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
         <rdfs:comment xml:lang="en">Sensor used to measure NH4 concentration level in the water.</rdfs:comment>
         <rdfs:label xml:lang="en">Water NH4 Ion Sensor</rdfs:label>
     </owl:Class>
@@ -5779,7 +5779,7 @@ O&amp;M allows sensors, methods, instruments, systems, algorithms and process ch
     <!-- http://purl.org/iot/vocab/m3-lite#WaterNO3IonSensor -->
 
     <owl:Class rdf:about="&mthreelite;WaterNO3IonSensor">
-        <rdfs:subClassOf rdf:resource="&mthreelite;SensingDevice"/>
+        <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
         <rdfs:comment xml:lang="en">Sensor used to measure NO3 concentration level in the water.</rdfs:comment>
         <rdfs:label xml:lang="en">Water NO3 Ion Sensor</rdfs:label>
     </owl:Class>
