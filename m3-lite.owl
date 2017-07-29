@@ -38,24 +38,23 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#">
 
     <owl:Ontology rdf:about="http://purl.org/iot/vocab/m3-lite#">
-        <owl:versionInfo rdf:datatype="&xsd;decimal">1.1</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="&xsd;decimal">3.0</owl:versionInfo>
         <dcterms:issued rdf:datatype="&xsd;date">2015-07-02</dcterms:issued>
-        <rdfs:comment xml:lang="en">The M3-lite taxonomy is a taxonomy that enables testbeds to semantically annotate the IoT data produced by heterogeneous devices and store them in a federated datastore such as FIESTA-IoT. We classify devices, the domain of interests (health, smart home, smart kitchen, environmental monitoring, etc.), phenomena and unit of measurements.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The M3-lite is a taxonomy that enables testbeds to semantically annotate the IoT data produced by heterogeneous devices and store them in a federated datastore such as FIESTA-IoT. In this taxonomy, we classify devices, the domain of interests (health, smart home, smart kitchen, environmental monitoring, etc.), phenomena and unit of measurements.</rdfs:comment>
         <vann:preferredNamespacePrefix>m3-lite</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>http://purl.org/iot/vocab/m3-lite#</vann:preferredNamespaceUri>
         <dc:title xml:lang="en">The M3-lite Taxonomy</dc:title>
-        <dcterms:modified rdf:datatype="&xsd;date">2017-04-20</dcterms:modified>
+        <dcterms:modified rdf:datatype="&xsd;date">2017-07-29</dcterms:modified>
         <dc:creator xml:lang="en">Rachit Agarwal, Inria, Paris</dc:creator>
         <dc:creator xml:lang="en">David Gomez, UC, Santander</dc:creator>
         <dc:creator xml:lang="en">Tarek Elsaleh, UNIS, Surrey</dc:creator>
         <dc:creator xml:lang="en">Luis Sanchez, UC, Santander</dc:creator>
-        <dc:creator xml:lang="en">Jorge Lanza, UC, Santander</dc:creator>
-        <dc:creator xml:lang="en">Amelie Gyrard, NUIG, Galway</dc:creator>
-        <dc:contributor xml:lang="en">Garvita Bajaj, Inria, Paris</dc:contributor>
-        <dc:description xml:lang="en">M3-lite taxonomy is designed for the FIESTA-IOT H2020 EU project. It is a lite version of M3 ontology. M3-lite contains taxonomy for QuantityKind (commonly known as physical and environmental phenomenon), Unit of measurements, different types of sensor and different types of domain of interests. M3-lite has evolved to serve the purpose of several testbeds that want to be part of federation provided by FIESTA-IoT. Most relevant testbeds integrated using M3-lite are  EU FP7's SmartSantander testbed, UniS's (UK) SmartICS testbed, Inria's (France) Soundcity testbed, KETI's (South Korea) Mobius testbed and Com4Innov's (France) 4G testbed.
+        <dc:contributor xml:lang="en">Jorge Lanza, UC, Santander</dc:contributor>
+        <dc:contributor xml:lang="en">(Past) Amelie Gyrard, NUIG, Galway</dc:contributor>
+        <dc:contributor xml:lang="en">(Past) Garvita Bajaj, Inria, Paris</dc:contributor>
+        <dc:description xml:lang="en">M3-lite taxonomy is designed for the EU H2020 FIESTA-IoT project. It is a lite version of M3 ontology. M3-lite contains taxonomy for various QuantityKinds (commonly known as physical and environmental phenomena), Unit of measurements, different types of sensor and different types of domain of interests. M3-lite has evolved to serve the purpose of several testbeds that want to be part of federation provided by FIESTA-IoT. Most relevant testbeds integrated using M3-lite are EU FP7's SmartSantander testbed, UniS's (UK) SmartICS testbed, Inria's (France) Soundcity/Ambiciti testbed, KETI's (South Korea) Mobius testbed and EGM's (France) 4G testbed. More information on the above testbeds  along with those that have joined at the FIESTA-IoT platform is available via http://fiesta-iot.eu/index.php/fiesta-testbeds/. Intially, this taxonomy was a light weight version of M3 ontology and since 2016 has found its own separate way. 
 
-
-We further acknowledge, testbed provider for their valuable comments.
+		We further acknowledge, testbed provider such as SmartSantander, UniS, KETI, Inria, and other open call testbeds for their valuable comments. Please report any errors to rachit.agarwal@inria.fr. 
 
         </dc:description>
         <dc:rights>Copyright EU H2020 FIESTA-IoT</dc:rights>
@@ -64,6 +63,21 @@ We further acknowledge, testbed provider for their valuable comments.
 
 
     <!--
+    Last updated: July 29 2017
+    Rachit Agarwal (INRIA)
+        - Added iot-lite:ActuatingDevice subclass
+            VoiceCommandController
+
+        - Added ssn:SensingDevice subclasses
+            VOCSensor, ElectricalSensor, IEEE802154InterfaceEnergyMeter, BoardVoltageSensor, DeviceUptimeClock, VoiceCommandSensor, DirectionOfArrivalSensor
+
+        - added qu:QuantityKind subclasses
+            ChemicalAgentAtmosphericConcentrationNO, ChemicalAgentAtmosphericConcentrationSO2, ChemicalAgentAtmosphericConcentrationVOC, DeviceUptime, VoiceCommand, DirectionOfArrival
+
+        - added qu:Unit subclasses 
+            PartsPerBillion, DecibelMilliwatt
+
+
     Last updated: April 20 2017
     Rachit Agarwal (INRIA)
         - Converting all to British English (Meter to Metre and Liter to litre) (changes in UNITS, QKS, etc.)
@@ -5149,6 +5163,133 @@ We further acknowledge, testbed provider for their valuable comments.
         <rdfs:comment xml:lang="en">An electromotive force or potential difference expressed in volts (Source Google).</rdfs:comment>
         <rdfs:label xml:lang="en">Voltage</rdfs:label>
     </owl:Class>
+
+
+    <!-- V3 updates-->
+
+
+
+	<!-- http://purl.org/iot/vocab/m3-lite#VOCSensor -->
+
+    <owl:Class rdf:about="&mthreelite;VOCSensor">
+        <rdfs:subClassOf rdf:resource="&mthreelite;GaseousPollutantSensor"/>
+        <rdfs:comment xml:lang="en">Sensor that detects levels of Volatile Organic Components (VOC) in the environment.</rdfs:comment>
+        <rdfs:label xml:lang="en">Volatile Organic Compound (VOC) Sensor</rdfs:label>
+    </owl:Class>
+
+	<!-- http://purl.org/iot/vocab/m3-lite#IEEE802154InterfaceEnergyMeter -->
+
+    <owl:Class rdf:about="&mthreelite;IEEE802154InterfaceEnergyMeter">
+        <rdfs:subClassOf rdf:resource="&mthreelite;EnergyMeter"/>
+        <rdfs:comment xml:lang="en">Sensor that measures the power consumption of the IEEE802.15.4 interface nodes.</rdfs:comment>
+        <rdfs:label xml:lang="en">IEEE802.15.4 Interface Energy Meter</rdfs:label>
+    </owl:Class>
+
+	<!-- http://purl.org/iot/vocab/m3-lite#BoardVoltageSensor -->
+
+    <owl:Class rdf:about="&mthreelite;BoardVoltageSensor">
+        <rdfs:subClassOf rdf:resource="&mthreelite;VoltageSensor"/>
+        <rdfs:comment xml:lang="en">Sensor used to measure board input voltage.</rdfs:comment>
+        <rdfs:label xml:lang="en">Board Voltage Sensor</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#DeviceUptimeClock -->
+
+    <owl:Class rdf:about="&mthreelite;DeviceUptimeClock">
+        <rdfs:subClassOf rdf:resource="&mthreelite;Clock"/>
+        <rdfs:comment xml:lang="en">Sensor that measures time a device is working and is available.</rdfs:comment>
+        <rdfs:label xml:lang="en">Device Uptime Clock</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#VoiceCommandSensor -->
+
+    <owl:Class rdf:about="&mthreelite;VoiceCommandSensor">
+        <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
+        <rdfs:comment xml:lang="en">Sensor that uses automatic speech recognition technology to match or reject a recorded voice command according to a specified set of available voice commands.</rdfs:comment>
+        <rdfs:label xml:lang="en">Voice Command Sensor</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#DirectionOfArrivalSensor -->
+
+    <owl:Class rdf:about="&mthreelite;DirectionOfArrivalSensor">
+        <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
+        <rdfs:comment xml:lang="en">Sensor that estimates the azimuth direction of sources relative to the sensor’s position.</rdfs:comment>
+        <rdfs:label xml:lang="en">Direction Of Arrival (DOA) Sensor</rdfs:label>
+    </owl:Class>
+
+
+    <!-- http://purl.org/iot/vocab/m3-lite#ChemicalAgentAtmosphericConcentrationNO -->
+
+    <owl:Class rdf:about="&mthreelite;ChemicalAgentAtmosphericConcentrationNO">
+        <rdfs:subClassOf rdf:resource="&mthreelite;ChemicalAgentAtmosphericConcentration"/>
+        <rdfs:comment xml:lang="en">Measure of the concentration of Carbon Monoxide (CO) gas suspended in the atmosphere.</rdfs:comment>
+        <rdfs:label xml:lang="en">Nitrogen Monoxide (NO) Chemical Agent Atmospheric Concentration</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#ChemicalAgentAtmosphericConcentrationSO2 -->
+
+    <owl:Class rdf:about="&mthreelite;ChemicalAgentAtmosphericConcentrationSO2">
+        <rdfs:subClassOf rdf:resource="&mthreelite;ChemicalAgentAtmosphericConcentration"/>
+        <rdfs:comment xml:lang="en">Measure of the concentration of Sulphur dioxide (SO2) gas suspended in the atmosphere.</rdfs:comment>
+        <rdfs:label xml:lang="en">Sulphur dioxide (SO2) Chemical Agent Atmospheric Concentration</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#ChemicalAgentAtmosphericConcentrationVOC -->
+
+    <owl:Class rdf:about="&mthreelite;ChemicalAgentAtmosphericConcentrationVOC">
+        <rdfs:subClassOf rdf:resource="&mthreelite;ChemicalAgentAtmosphericConcentration"/>
+        <rdfs:comment xml:lang="en">Measure of the concentration of Volatile Organic Compound gas suspended in the atmosphere.</rdfs:comment>
+        <rdfs:label xml:lang="en">Volatile Organic Compound Chemical Agent Atmospheric Concentration</rdfs:label>
+    </owl:Class>
+
+	<!-- http://purl.org/iot/vocab/m3-lite#DeviceUptime -->
+
+    <owl:Class rdf:about="&mthreelite;DeviceUptime">
+        <rdfs:subClassOf rdf:resource="&qu;QuantityKind"/>
+        <rdfs:comment xml:lang="en">Time a device is working and is available</rdfs:comment>
+        <rdfs:label xml:lang="en">Device Uptime</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://purl.org/iot/vocab/m3-lite#VoiceCommand -->
+
+    <owl:Class rdf:about="&mthreelite;VoiceCommand">
+        <rdfs:subClassOf rdf:resource="&qu;QuantityKind"/>
+        <rdfs:comment xml:lang="en">A voice command to control a voice controlled system or environment, such as a smart home.</rdfs:comment>
+        <rdfs:label xml:lang="en">Voice Command</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#DirectionOfArrival -->
+
+    <owl:Class rdf:about="&mthreelite;DirectionOfArrival">
+        <rdfs:subClassOf rdf:resource="&qu;QuantityKind"/>
+        <rdfs:comment xml:lang="en">The azimuth direction of a  source relative to the azimuth direction of the DOA sensor.</rdfs:comment>
+        <rdfs:label xml:lang="en">Direction Of Arrival</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#PartsPerBillion -->
+
+    <owl:Class rdf:about="&mthreelite;PartsPerBillion">
+        <rdfs:subClassOf rdf:resource="&mthreelite;PPM"/>
+        <rdfs:comment xml:lang="en">It describes the concentration of something in parts per billion parts of water or soil, expressed in any (but common) unit of measurement.</rdfs:comment>
+        <rdfs:label xml:lang="en">Parts Per Billion</rdfs:label>
+    </owl:Class>
+	
+	<!-- http://purl.org/iot/vocab/m3-lite#DecibelMilliwatt -->
+
+    <owl:Class rdf:about="&mthreelite;DecibelMilliwatt">
+        <rdfs:subClassOf rdf:resource="&mthreelite;Decibel"/>
+        <rdfs:comment xml:lang="en">It describes power ratio in decibels of the measured power referenced to one milliwatt.</rdfs:comment>
+        <rdfs:label xml:lang="en">Decibel Milliwatt</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#VoiceCommandController -->
+
+    <owl:Class rdf:about="&mthreelite;VoiceCommandController">
+        <rdfs:subClassOf rdf:resource="&iot-lite;ActuatingDevice"/>
+        <rdfs:comment xml:lang="en">An actuating device called  that allows to semi-control the environment of the Voice Command Sensor.</rdfs:comment>
+        <rdfs:label xml:lang="en">Voice Command Controller</rdfs:label>
+    </owl:Class>
+
 
 </rdf:RDF>
 
