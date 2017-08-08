@@ -802,7 +802,7 @@ We further acknowledge, testbed provider such as SmartSantander, UniS, KETI, Inr
                 <owl:onDatatype rdf:resource="&xsd;string"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:maxLength rdf:datatype="&xsd;string">255</xsd:maxLength>
+                        <xsd:maxLength rdf:datatype="&xsd;integer">255</xsd:maxLength>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
