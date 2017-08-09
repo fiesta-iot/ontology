@@ -49,7 +49,7 @@
         <dc:creator xml:lang="en">David Gomez, UC, Santander</dc:creator>
         <dc:creator xml:lang="en">Tarek Elsaleh, UNIS, Surrey</dc:creator>
         <dc:creator xml:lang="en">Luis Sanchez, UC, Santander</dc:creator>
-        <dc:contributor xml:lang="en">Jorge Lanza, UC, Santander</dc:contributor>
+        <dc:creator xml:lang="en">Jorge Lanza, UC, Santander</dc:creator>
         <dc:contributor xml:lang="en">(Past) Amelie Gyrard, NUIG, Galway</dc:contributor>
         <dc:contributor xml:lang="en">(Past) Garvita Bajaj, Inria, Paris</dc:contributor>
         <dc:description xml:lang="en">M3-lite taxonomy is designed for the EU H2020 FIESTA-IoT project. It is a lite version of M3 ontology. M3-lite contains taxonomy for various QuantityKinds (commonly known as physical and environmental phenomena), Unit of measurements, different types of sensor and different types of domain of interests. M3-lite has evolved to serve the purpose of several testbeds that want to be part of federation provided by FIESTA-IoT. Most relevant testbeds integrated using M3-lite are EU FP7's SmartSantander testbed, UniS's (UK) SmartICS testbed, Inria's (France) Soundcity/Ambiciti testbed, KETI's (South Korea) Mobius testbed and EGM's (France) 4G testbed. More information on the above testbeds  along with those that have joined at the FIESTA-IoT platform is available via http://fiesta-iot.eu/index.php/fiesta-testbeds/. Intially, this taxonomy was a light weight version of M3 ontology and since 2016 has found its own separate way. 
