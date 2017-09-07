@@ -57,8 +57,8 @@
         <dc:creator xml:lang="en">Tarek Elsaleh, UNIS, Surrey</dc:creator>
         <dc:creator xml:lang="en">Luis Sanchez, UC, Santander</dc:creator>
         <dc:creator xml:lang="en">Jorge Lanza, UC, Santander</dc:creator>
-        <dc:contributor xml:lang="en">(Past) Amelie Gyrard, NUIG, Galway</dc:contributor>
-        <dc:contributor xml:lang="en">(Past) Garvita Bajaj, Inria, Paris</dc:contributor>
+        <dc:contributor xml:lang="en">Amelie Gyrard, NUIG, Galway</dc:contributor>
+        <dc:contributor xml:lang="en">Garvita Bajaj, Inria, Paris (Past)</dc:contributor>
         <dc:description xml:lang="en">Many testbeds owning devices or applications interacting with the sensors, store their inherent observations and other related data in their own proprietary format. In other words, making a testbed independent and isolated from others that cannot directly interact with each other. Differences in the data format lead to interoperability issues between the testbeds and much work has to be done in order to ensure the compatibility. One has to understand different data formats and create the mapping between them. As a result, a testbed must understand other testbed&apos;s format and create the mapping both while sending and receiving information. One method to accomplish interoperability is through the usage of semantic-based technologies to annotate all the information shared by the platforms. Nevertheless, some of the relevant existing ontologies promise interoperability but: 
 
 - do not address the problem to describe the observation in an interoperable manner to ease further tasks, such as reasoning, 
