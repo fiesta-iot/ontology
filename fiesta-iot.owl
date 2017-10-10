@@ -52,11 +52,11 @@
         <dc:description rdf:resource="http://ontology.fiesta-iot.eu/ontologyDocs/observationgraph.png"/>
         <dc:description rdf:resource="http://ontology.fiesta-iot.eu/ontologyDocs/resourceannotation.png"/>
         <dc:description rdf:resource="http://ontology.fiesta-iot.eu/ontologyDocs/observationannotation.png"/>
-        <dc:creator xml:lang="en">Rachit Agarwal, Inria, Paris</dc:creator>
-        <dc:creator xml:lang="en">David Gomez, UC, Santander</dc:creator>
-        <dc:creator xml:lang="en">Tarek Elsaleh, UNIS, Surrey</dc:creator>
-        <dc:creator xml:lang="en">Luis Sanchez, UC, Santander</dc:creator>
-        <dc:creator xml:lang="en">Jorge Lanza, UC, Santander</dc:creator>
+        <dc:contributor xml:lang="en">Rachit Agarwal, Inria, Paris</dc:contributor>
+        <dc:contributor xml:lang="en">David Gomez, UC, Santander</dc:contributor>
+        <dc:contributor xml:lang="en">Tarek Elsaleh, UNIS, Surrey</dc:contributor>
+        <dc:contributor xml:lang="en">Luis Sanchez, UC, Santander</dc:contributor>
+        <dc:contributor xml:lang="en">Jorge Lanza, UC, Santander</dc:contributor>
         <dc:contributor xml:lang="en">Amelie Gyrard, NUIG, Galway</dc:contributor>
         <dc:contributor xml:lang="en">Garvita Bajaj, Inria, Paris (Past)</dc:contributor>
         <dc:description xml:lang="en">Many testbeds owning devices or applications interacting with the sensors, store their inherent observations and other related data in their own proprietary format. In other words, making a testbed independent and isolated from others that cannot directly interact with each other. Differences in the data format lead to interoperability issues between the testbeds and much work has to be done in order to ensure the compatibility. One has to understand different data formats and create the mapping between them. As a result, a testbed must understand other testbed&apos;s format and create the mapping both while sending and receiving information. One method to accomplish interoperability is through the usage of semantic-based technologies to annotate all the information shared by the platforms. Nevertheless, some of the relevant existing ontologies promise interoperability but: 
@@ -6033,6 +6033,14 @@ O&amp;M allows sensors, methods, instruments, systems, algorithms and process ch
         <rdfs:subClassOf rdf:resource="&mthreelite;ChemicalAgentAtmosphericConcentration"/>
         <rdfs:comment xml:lang="en">Measure of the concentration of Sulphur dioxide (SO2) gas suspended in the atmosphere.</rdfs:comment>
         <rdfs:label xml:lang="en">Sulphur dioxide (SO2) Chemical Agent Atmospheric Concentration</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#ChemicalAgentAtmosphericConcentrationNH3 -->
+     
+    <owl:Class rdf:about="&mthreelite;ChemicalAgentAtmosphericConcentrationNH3">
+        <rdfs:subClassOf rdf:resource="&mthreelite;ChemicalAgentAtmosphericConcentration"/>
+        <rdfs:comment xml:lang="en">Measure of the concentration of Ammonia (NH3) gas suspended in the atmosphere.</rdfs:comment>
+        <rdfs:label xml:lang="en">Ammonia (NH3) Chemical Agent Atmospheric Concentration</rdfs:label>
     </owl:Class>
 
     <!-- http://purl.org/iot/vocab/m3-lite#ChemicalAgentAtmosphericConcentrationVOC -->
