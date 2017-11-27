@@ -6140,7 +6140,7 @@ O&amp;M allows sensors, methods, instruments, systems, algorithms and process ch
 
     <!-- http://purl.org/iot/vocab/m3-lite#TimeToArrivalSensor -->
     
-    <owl:Class rdf:about="&mthreelite;PeopleCountSensor">
+    <owl:Class rdf:about="&mthreelite;TimeToArrivalSensor">
         <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
         <rdfs:comment xml:lang="en">Virtual device that represents a bus stop X and a bus line Y; it estimates the remaining time the next bus (belonging to line Y) will arrive to bus stop X</rdfs:comment>
         <rdfs:label xml:lang="en">Time To Arrival Sensor</rdfs:label>
