@@ -5396,6 +5396,15 @@ We further acknowledge, testbed provider such as SmartSantander, UniS, KETI, Inr
         <rdfs:label xml:lang="en">Count Statellites Signal Received</rdfs:label>
     </owl:Class>
 
+    
+    <!--  http://purl.org/iot/vocab/m3-lite#CurrentSensor -->
+     
+    <owl:Class rdf:about="&mthreelite;CurrentSensor">
+        <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
+        <rdfs:comment xml:lang="en">A current sensor is a device that detects electric current in a wire, and generates a signal proportional to that current.</rdfs:comment>
+        <rdfs:label xml:lang="en">Current Sensor</rdfs:label>
+    </owl:Class>
+
 </rdf:RDF>
 
 
