@@ -6158,7 +6158,7 @@ O&amp;M allows sensors, methods, instruments, systems, algorithms and process ch
     <!-- http://purl.org/iot/vocab/m3-lite#LoRaInterface -->
     
     <owl:Class rdf:about="&mthreelite;LoRaInterface">
-        <rdfs:subClassOf rdf:resource="&ssn;Device"/>
+        <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
         <rdfs:comment xml:lang="en">This device is used for long range low power wireless communications. We can use this device to report network metrics (SNR, latence, etc.)</rdfs:comment>
         <rdfs:label xml:lang="en">LoRa Interface</rdfs:label>
     </owl:Class>
