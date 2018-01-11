@@ -6135,7 +6135,7 @@ O&amp;M allows sensors, methods, instruments, systems, algorithms and process ch
 	<owl:Class rdf:about="&mthreelite;TimeOfArrival">
 		<rdfs:subClassOf rdf:resource="&qu;QuantityKind"/>
 		<rdfs:comment xml:lang="en">Estimated time till an object is arriving to a specific location (typically used in transportation).</rdfs:comment>
-		<rdfs:label xml:lang="en">Time to arrival</rdfs:label>
+		<rdfs:label xml:lang="en">Time of arrival</rdfs:label>
 	</owl:Class>
 
 	<!-- http://purl.org/iot/vocab/m3-lite#TimeOfArrivalSensor -->
@@ -6143,7 +6143,7 @@ O&amp;M allows sensors, methods, instruments, systems, algorithms and process ch
 	<owl:Class rdf:about="&mthreelite;TimeOfArrivalSensor">
 		<rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
 		<rdfs:comment xml:lang="en">Virtual device that estimates the remaining time for an object to arrive at a specific location.</rdfs:comment>
-		<rdfs:label xml:lang="en">Time To Arrival Sensor</rdfs:label>
+		<rdfs:label xml:lang="en">Time of Arrival Sensor</rdfs:label>
 	</owl:Class>
 
 
