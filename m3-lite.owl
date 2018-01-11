@@ -5319,19 +5319,19 @@ We further acknowledge, testbed provider such as SmartSantander, UniS, KETI, Inr
 		<rdfs:label xml:lang="en">People Count Sensor</rdfs:label>
 	</owl:Class>
 
-	<!-- http://purl.org/iot/vocab/m3-lite#TimeToArrival -->
+	<!-- http://purl.org/iot/vocab/m3-lite#TimeOfArrival -->
 	
-	<owl:Class rdf:about="&mthreelite;TimeToArrival">
+	<owl:Class rdf:about="&mthreelite;TimeOfArrival">
 		<rdfs:subClassOf rdf:resource="&qu;QuantityKind"/>
-		<rdfs:comment xml:lang="en">Estimated time (in seconds) till the next bus is arriving to the bus stop </rdfs:comment>
+		<rdfs:comment xml:lang="en">Estimated time till an object is arriving to a specific location (typically used in transportation).</rdfs:comment>
 		<rdfs:label xml:lang="en">Time to arrival</rdfs:label>
 	</owl:Class>
 
-	<!-- http://purl.org/iot/vocab/m3-lite#TimeToArrivalSensor -->
+	<!-- http://purl.org/iot/vocab/m3-lite#TimeOfArrivalSensor -->
 	
-	<owl:Class rdf:about="&mthreelite;TimeToArrivalSensor">
+	<owl:Class rdf:about="&mthreelite;TimeOfArrivalSensor">
 		<rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
-		<rdfs:comment xml:lang="en">Virtual device that represents a bus stop X and a bus line Y; it estimates the remaining time the next bus (belonging to line Y) will arrive to bus stop X</rdfs:comment>
+		<rdfs:comment xml:lang="en">Virtual device that estimates the remaining time for an object to arrive at a specific location.</rdfs:comment>
 		<rdfs:label xml:lang="en">Time To Arrival Sensor</rdfs:label>
 	</owl:Class>
 
@@ -5396,13 +5396,40 @@ We further acknowledge, testbed provider such as SmartSantander, UniS, KETI, Inr
         <rdfs:label xml:lang="en">Count Statellites Signal Received</rdfs:label>
     </owl:Class>
 
-    
     <!--  http://purl.org/iot/vocab/m3-lite#CurrentSensor -->
      
     <owl:Class rdf:about="&mthreelite;CurrentSensor">
         <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
         <rdfs:comment xml:lang="en">A current sensor is a device that detects electric current in a wire, and generates a signal proportional to that current.</rdfs:comment>
         <rdfs:label xml:lang="en">Current Sensor</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#TimeOfArrivalNextBus -->
+    <owl:Class rdf:about="http://purl.org/iot/vocab/m3-lite#TimeOfArrivalNextBus">
+        <rdfs:subClassOf rdf:resource="http://purl.org/iot/vocab/m3-lite#TimeOfArrival"/>
+        <rdfs:comment xml:lang="en">Estimated time (in seconds) till a bus will arrive at a specific bus stop. </rdfs:comment>
+        <rdfs:label xml:lang="en">Time of arrival for the next bus</rdfs:label>
+    </owl:Class>
+
+    <!--http://purl.org/iot/vocab/m3-lite#TimeOfArrivalNextBusSensor -->
+    <owl:Class rdf:about="http://purl.org/iot/vocab/m3-lite#TimeOfArrivalNextBusSensor">
+        <rdfs:subClassOf rdf:resource="http://purl.org/iot/vocab/m3-lite#TimeOfArrivalSensor"/>
+        <rdfs:comment xml:lang="en">Virtual device that represents a bus stop X and a bus line Y; it estimates the remaining time the next bus (belonging to line Y) will arrive at bus stop X. </rdfs:comment>
+        <rdfs:label xml:lang="en">Time of arrival sensor for the next bus</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#DistanceNextBus -->
+    <owl:Class rdf:about="http://purl.org/iot/vocab/m3-lite#DistanceNextBus">
+        <rdfs:subClassOf rdf:resource="http://purl.org/iot/vocab/m3-lite#Distance"/>
+        <rdfs:comment xml:lang="en">Estimated driving distance (in meters) between a bus and the next bus stop. </rdfs:comment>
+        <rdfs:label xml:lang="en">Driving distance between a bus and the next bus stop</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#DistanceNextBusSensor -->
+    <owl:Class rdf:about="http://purl.org/iot/vocab/m3-lite#DistanceNextBusSensor">
+        <rdfs:subClassOf rdf:resource="http://purl.org/iot/vocab/m3-lite#DistanceSensor"/>
+        <rdfs:comment xml:lang="en"> Virtual device that represents a bus stop X and a bus line Y; it measures the driving distance between the next bus (belonging to line Y) and the bus stop X. </rdfs:comment>
+        <rdfs:label xml:lang="en">Sensor measuring the driving distance between a bus and the next bus stop</rdfs:label>
     </owl:Class>
 
 </rdf:RDF>
