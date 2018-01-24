@@ -270,15 +270,15 @@ We further acknowledge, testbed provider such as SmartSantander, UniS, KETI, Inr
 
 
 
-    <!-- http://purl.org/dc/elements/1.1/issued -->
+    <!-- http://purl.org/dc/terms/issued -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/issued"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
 
 
 
-    <!-- http://purl.org/dc/elements/1.1/modified -->
+    <!-- http://purl.org/dc/terms/modified -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/modified"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
 
 
 
