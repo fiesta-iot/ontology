@@ -12,7 +12,6 @@
     <!ENTITY ssn "http://purl.oclc.org/NET/ssnx/ssn#">
     <!ENTITY geo "http://www.w3.org/2003/01/geo/wgs84_pos#">
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <!ENTITY terms "http://purl.org/dc/terms/">
     <!ENTITY xml "http://www.w3.org/XML/1998/namespace">
     <!ENTITY onemtom "http://www.onem2m.org/ontology/Base_Ontology/base_ontology#">
     <!ENTITY dul "http://www.loa.istc.cnr.it/ontologies/DUL.owl#">
@@ -36,7 +35,6 @@
      xmlns:ssn="http://purl.oclc.org/NET/ssnx/ssn#"
      xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:onemtom="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#"
      xmlns:qudt="http://data.qudt.org/qudt/owl/1.0.0/unit.owl#"
