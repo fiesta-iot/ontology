@@ -794,6 +794,7 @@ We further acknowledge, testbed provider such as SmartSantander, UniS, KETI, Inr
     <owl:DatatypeProperty rdf:about="&dul;hasDataValue">
         <rdfs:domain rdf:resource="&ssn;ObservationValue"/>
         <rdfs:domain rdf:resource="&ssn;MeasurementProperty"/>
+        <rdfs:domain rdf:resource="&mthreelite;Direction"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:unionOf rdf:parseType="Collection">
@@ -6236,7 +6237,52 @@ O&amp;M allows sensors, methods, instruments, systems, algorithms and process ch
     </owl:Class>
 
 
+<!-- http://purl.org/iot/vocab/m3-lite#StayingPeopleCountSensor -->
+    <owl:Class rdf:about="&mthreelite;StayingPeopleCountSensor">
+        <rdfs:subClassOf rdf:resource="&mthreelite;PeopleCountSensor"/>
+        <rdfs:comment xml:lang="en">Device used to count the number of people that stays within an area for more than a threshold of time.</rdfs:comment>
+        <rdfs:label xml:lang="en">Staying People Count Sensor</rdfs:label>
+    </owl:Class>
 
+    <!-- http://purl.org/iot/vocab/m3-lite#CountPeopleStaying -->
+    
+    <owl:Class rdf:about="&mthreelite;CountPeopleStaying">
+        <rdfs:subClassOf rdf:resource="&mthreelite;CountPeople"/>
+        <rdfs:comment xml:lang="en">Number of people that stayed within an area for more than a threshold of time.</rdfs:comment>
+        <rdfs:label xml:lang="en">Count People Staying</rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#PeopleStayDurationSensor  -->
+    
+    <owl:Class rdf:about="&mthreelite;PeopleStayDurationSensor">
+         <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
+        <rdfs:comment xml:lang="en">Device used to measure the time people stays within an area.</rdfs:comment>
+        <rdfs:label xml:lang="en">People Stay Duration Sensor</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://purl.org/iot/vocab/m3-lite#PeopleStayDurationAverage  -->
+    
+    <owl:Class rdf:about="&mthreelite;PeopleStayDurationAverage">
+        <rdfs:subClassOf rdf:resource="&qu;QuantityKind"/>
+        <rdfs:comment xml:lang="en">Average time people stays within an area.</rdfs:comment>
+        <rdfs:label xml:lang="en">People Stay Duration Average </rdfs:label>
+    </owl:Class>
+
+    <!-- http://purl.org/iot/vocab/m3-lite#PeopleFlowCountSensor -->
+    
+    <owl:Class rdf:about="&mthreelite;PeopleFlowCountSensor">
+        <rdfs:subClassOf rdf:resource="&mthreelite;PeopleCountSensor"/>
+        <rdfs:comment xml:lang="en">Device used to count the number of people the moves from an area towards another area during a time window.</rdfs:comment>
+        <rdfs:label xml:lang="en">People Flow Count Sensor</rdfs:label>
+    </owl:Class>
+
+     <!-- http://purl.org/iot/vocab/m3-lite#CountPeopleMoving -->
+    
+    <owl:Class rdf:about="&mthreelite;CountPeopleMoving">
+        <rdfs:subClassOf rdf:resource="&mthreelite;CountPeople"/>
+        <rdfs:comment xml:lang="en">Number of people that moved outside an area towards another area during a time window.</rdfs:comment>
+        <rdfs:label xml:lang="en">Count People Moving</rdfs:label>
+    </owl:Class>
 
 
     <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Device -->
