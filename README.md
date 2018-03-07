@@ -1,0 +1,1 @@
+This repository contains FIESTA-IoT Ontology [![Zenodo](https://zenodo.org/badge/doi/10.5281/zenodo.1193299.svg)](http://dx.doi.org/10.5281/zenodo.1193299) and M3-Lite taxonmy [![Zenodo](https://zenodo.org/badge/doi/110.5281/zenodo.1193303.svg)](http://dx.doi.org/10.5281/zenodo.1193303)
